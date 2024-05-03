@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Nation Sounds - FAQ</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="./style/style.css">
+    </head>
+    
+    <body>
+        <header class="d-flex flex-row justify-content-between">
+            <div>
+                <img src="./media/logo.png" alt="logo" id="logo" width="70">
+            </div>
+            <div id="menuBtn" onclick="showMenu()">
+                <img src="./media/icons/list.svg" alt="icone menu" width="70" >
+            </div>
+        </header>
+        
+        <nav id="menuInfo">
+            <ul>
+                <li><a href="programme.html"> Progammations</a></li>
+                <li>Concerts</li>
+                <li><a href="https://www.ticketmaster.fr/fr">Billetterie</a></li>
+                <li>Informations pratiques</li>
+                <li>Carte interactive</li>
+                <li><a> Réseaux sociaux</a></li>
+                <li> Partenaires</li>
+                <li><a href="FAQ.html"> FAQ</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h1>Foire aux questions</h1>
+
+            <h2>Billets</h2>
+
+            <article id="faqBillet" class="faqTopic">
+
+                <div>
+                    <h3 class="question" onclick="showQuestion()">OU OBTENIR DES PLACES?<span>+</span></h3>
+                    <p class="reponse">Les places sont disponibles sur notre billeterie juste ici! </p>
+                </div>
+
+                <div>
+                    <h3 class="question" onclick="showQuestion()">JE VEUX REVENDRE MON BILLET<span>+</span></h3>
+                    <p class="reponse">La loi n° 2012-348 du 12 mars 2012 protège les spectateurs contre la revente de billets par toute société ou personne physique non agréé
+                         par le producteur du spectacle. Le festival se réserve le droit d’engager des poursuites si des ventes illégales sont constatées 
+                         (vous encourez jusque 15000€ d’amende).
+
+                        Si vous décidez d’acheter un billet en-dehors des circuits légaux, vous risquez d’avoir affaire à un faux ou a une copie 
+                        et de ne pas pouvoir rentrer sur le site du festival.</p>
+                </div>
+
+                <div>
+                    <h3 class="question" onclick="showQuestion()">PUIS-JE CHANGER LE NOM INSCRIT SUR MON BILLET  ?<span>+</span></h3>
+                    <p class="reponse">Vous recevrez un email  au printemps 2024 vous indiquant les modalités vous permettant de nommer vos billets (obligatoire). 
+                        Vous aurez jusqu’à mi-juin 2023 pour nommer chaque billet.
+
+                        À partir de fin juin 2024, vous recevrez sur votre adresse mail un lien vers votre commande pour télécharger vos billets. 
+                        Si vous n’avez pas nommé vos billets, ils seront automatiquement attribués au nom de l’acheteur de la commande.</p>
+                </div>
+                
+            </article>
+
+            <h2>Accessibilité</h2>
+
+            <article id="faqAcces" >
+
+                <div >
+                    <h3 class="question" onclick="showQuestion()">Y-A-T'IL DES PARKINGS RESERVES AUX PMR?<span>+</span></h3>
+                    <p class="reponse">Pour accéder au parking PMR, se munir du macaron ou de tout justificatif médical datant de moins d’un mois
+                         à présenter aux bénévoles des parkings qui vous dirigeront alors vers l’espace réservé.</p>
+                </div>
+
+                <div >
+                    <h3 class="question" onclick="showQuestion()">Y-A-T'IL DES ESPACES SPECTACLE DEDIES AU PMR?<span>+</span></h3>
+                    <p class="reponse"> il suffit de se présenter aux bénévoles avec vos justificatifs et vous serez alors dirigés vers l’espace réservé.
+                         Une personne pourra éventuellement vous accompagner dans cet espace sous réserve de place disponible. A défaut, elle pourra s’installer à proximité.</p>
+                </div>
+                
+            </article>
+
+            <h2>Formulaire de contact</h2>
+
+            <form id="formContact" class="container d-flex flex-lg-row  flex-column">
+
+                <div class="col-lg-4 d-flex flex-column">
+                    <label for="fName">Prénom*</label>
+                    <input type="text" name="fName" id="fName" placeholder="Entrez votre prénom" required>
+                
+                    <label for="mail">Email*</label>
+                    <input type="text" name="mail" id="mail" placeholder="Entrez une adresse mail valide" required>
+                </div>
+                
+                <div class="col-lg-4 d-flex flex-column">
+                    <label for="lName">Nom*</label>
+                    <input type="text" name="lName" id="lName" placeholder="Entrez votre nom" required>
+
+                    <label for="formTelephone">Téléphone</label>
+                    <input type="text" name="telephone" id="formTelephone" placeholder="Numéro de téléphone">
+                </div>
+
+                <div class="col-lg-4 d-flex flex-column">       
+                    <div id="formMessage" class="d-flex flex-column ">
+                        <label for="message">Message</label>
+                        <textarea class="d-flex align-self-stretch" name="message" id="message" placeholder="Entrez votre message"></textarea>
+                    </div>
+
+                    <button id="btnsubmit" type="submit"> ENVOYEZ </button>
+                </div>
+
+            </form>
+        </main>
+
+        <footer>
+            
+        </footer>
+
+        <script src="/script/menu.js"></script>
+        <script src="/script/FAQ.js"></script>
+    </body>
+</html>

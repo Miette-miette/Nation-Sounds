@@ -1,0 +1,39 @@
+#logo{
+    width: 70px;
+    height: 70px;
+}
+
+#menuBtn{
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes menuSlide {
+	0% {
+		transform: translateY(-500px);
+	}
+
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+#menuInfo{
+    display: none;
+    position: relative;
+    background-color: #492E34;
+    color: beige;
+    width: 100%;
+    height: 100%;
+    padding-top: 50px;
+    margin-top: -80px;
+    animation: menuSlide 2s ease 0s 1 normal ;
+    z-index: 1;
+}
+
+
+/* FAQ */
+
+.reponse{
+    display: none;
+}
