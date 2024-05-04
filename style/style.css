@@ -1,3 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad:ital,wght@0,400..700;1,400..700&family=Caprasimo&display=swap');
+
+body{
+    background-color: #FFE3B0;
+}
+
+main{
+    padding: 5% 20%;
+}
+
+
+/* TEXTES*/
+
+h1{
+    font-family: "Caprasimo", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #3f292e;
+}
+
+h2{
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #3f292e;
+}
+
+h3{
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    color: #3f292e;
+}
+
+p, label{
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    color: #3f292e;
+}
+
+li{
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    color: beige;
+}
+
+a{
+    text-decoration: none;
+}
+
+/* HEADER */
+
+header{
+    padding: 2%;
+}
+
 #logo{
     width: 70px;
     height: 70px;
@@ -5,12 +60,12 @@
 
 #menuBtn{
     position: relative;
-    z-index: 2;
+    z-index: 4;
 }
 
 @keyframes menuSlide {
 	0% {
-		transform: translateY(-500px);
+		transform: translateY(-1200px);
 	}
 
 	100% {
@@ -20,20 +75,101 @@
 
 #menuInfo{
     display: none;
-    position: relative;
+    position: absolute;
     background-color: #492E34;
     color: beige;
     width: 100%;
     height: 100%;
     padding-top: 50px;
-    margin-top: -80px;
+    margin-top: -150px;
     animation: menuSlide 2s ease 0s 1 normal ;
+    z-index: 3;
+}
+#menuInfo>ul{
+    padding-top: 10%;
+}
+
+/*FOOTER*/
+
+footer {
+    background-image: url(../media/illustration/footerBackground.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Accueil*/
+
+@keyframes logoRotation {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+#logoAnim{
+   padding: 10%;
+}
+
+#couronne{
+    position: absolute;
+    z-index: 2;
+    width: 40%;
+    animation: logoRotation 30s linear 0s ;
+    filter: drop-shadow(0 5px #8f505e);
+    
+
+}
+
+#logoCouronne{
+    position: relative;
     z-index: 1;
+    width: 50%;
+    filter: drop-shadow(0 5px #8f505e);
 }
 
 
 /* FAQ */
-
+.faqTopic{
+    padding: 2% 0;
+}
 .reponse{
     display: none;
+}
+.conteneurQuestion {
+    background-color: beige;
+    padding: 10px 25px 1px 25px;
+    border-style: solid;
+    border-color: #492E34;
+    border-radius: 15px;
+    margin: 1% 0;
+}
+
+.inputForm {
+    background-color: beige;
+    padding: 10px 25px 10px 25px;
+    border-style: solid;
+    border-color: #492E34;
+    border-radius: 15px;
+    margin: 1%;
+}
+
+/*RESEAUX SOCIAUX*/
+
+.imgRS {
+    width: 80px;
+    padding: 5%;
+    margin-right: 5%;
+}
+
+.conteneurRS {
+    background-color: beige;
+    padding: 25px;
+    border-style: solid;
+    border-color: #492E34;
+    border-radius: 50px;
+    margin: 1%;
+
 }

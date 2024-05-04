@@ -9,30 +9,36 @@
     </head>
     
     <body>
-        <header>
+        <header class="d-flex flex-row justify-content-between">
             <div>
-                <img src="./media/logo.png" alt="logo" id="logo">
+                <a href="index.html"> <img src="./media/logo.png" alt="logo" id="logo" width="70"></a>
+            </div>
+            <div id="menuBtn" onclick="showMenu()">
+                <img src="./media/icons/list.svg" alt="icone menu" width="70" id="iconMenu" >
             </div>
         </header>
         
-        <nav>
-            <ul>
-                <li>Informations</li>
-                <li>Progammations</li>
-                <li>Concerts</li>
-                <li>Billetterie</li>
-                <li>Informations pratiques</li>
-                <li>Carte interactive</li>
-                <li>Réseaux sociaux</li>
-                <li>Partenaires</li>
-                <li>Concerts</li>
+        <nav id="menuInfo">
+            <ul class="d-flex flex-column">
+                <li><a href="programme.html"> PROGRAMMATION</a></li>
+                <li>CONCERTS</li>
+                <li><a href="https://www.ticketmaster.fr/fr" target="_blank" rel="noreferrer">BILLETERIE</a></li>
+                <li>CARTE</li>
+                <li><a href="reseausociaux.html"> RESEAUX SOCIAUX</a></li>
+                <li> PARTENAIRE</li>
+                <li><a href="FAQ.html"> FAQ</a></li>
             </ul>
         </nav>
 
         <main> 
             <article id="bienvenue">
-                <h1>Nation Sounds 2024</h1>
-                <img>
+               
+                <div id="logoAnim" class="d-flex justify-content-center align-items-center">
+                    <img src="./media/illustration/courone.png" id="couronne">
+                    <img src="./media/illustration/logoGM.png" id="logoCouronne">
+                </div>
+
+                 <h1>Nation Sounds 2024</h1>
                 <input type="button" value="Découvrez le programme">
             </article>
 
@@ -69,5 +75,6 @@
         <footer>
             
         </footer>
+        <script src="/script/menu.js"></script>
         </body>
     </html>

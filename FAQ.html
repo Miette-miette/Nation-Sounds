@@ -9,41 +9,45 @@
     </head>
     
     <body>
+    
         <header class="d-flex flex-row justify-content-between">
             <div>
-                <img src="./media/logo.png" alt="logo" id="logo" width="70">
+                <a href="index.html"> <img src="./media/logo.png" alt="logo" id="logo" width="70" ></a>
             </div>
             <div id="menuBtn" onclick="showMenu()">
-                <img src="./media/icons/list.svg" alt="icone menu" width="70" >
+                <img src="./media/icons/list.svg" alt="icone menu" width="70" id="iconMenu" >
             </div>
         </header>
         
         <nav id="menuInfo">
-            <ul>
-                <li><a href="programme.html"> Progammations</a></li>
-                <li>Concerts</li>
-                <li><a href="https://www.ticketmaster.fr/fr">Billetterie</a></li>
-                <li>Informations pratiques</li>
-                <li>Carte interactive</li>
-                <li><a> Réseaux sociaux</a></li>
-                <li> Partenaires</li>
+            <ul class="d-flex flex-column">
+                <li><a href="programme.html"> PROGRAMMATION</a></li>
+                <li>CONCERTS</li>
+                <li><a href="https://www.ticketmaster.fr/fr" target="_blank" rel="noreferrer">BILLETERIE</a></li>
+                <li>CARTE</li>
+                <li><a href="reseausociaux.html"> RESEAUX SOCIAUX</a></li>
+                <li> PARTENAIRE</li>
                 <li><a href="FAQ.html"> FAQ</a></li>
             </ul>
         </nav>
 
         <main>
-            <h1>Foire aux questions</h1>
 
-            <h2>Billets</h2>
+            <div>
+                <img src="./media/illustration/megaphone.png" width="100px">
+                <h1 class="d-flex justify-content-center">Foire aux questions</h1>
+            </div>
 
-            <article id="faqBillet" class="faqTopic">
+            <h2 class="faqTopic">Billets</h2>
 
-                <div>
+            <article id="faqBillet" >
+
+                <div class="conteneurQuestion">
                     <h3 class="question" onclick="showQuestion()">OU OBTENIR DES PLACES?<span>+</span></h3>
-                    <p class="reponse">Les places sont disponibles sur notre billeterie juste ici! </p>
+                    <p class="reponse">Les places sont disponibles sur notre billetterie juste ici! </p>
                 </div>
 
-                <div>
+                <div class="conteneurQuestion">
                     <h3 class="question" onclick="showQuestion()">JE VEUX REVENDRE MON BILLET<span>+</span></h3>
                     <p class="reponse">La loi n° 2012-348 du 12 mars 2012 protège les spectateurs contre la revente de billets par toute société ou personne physique non agréé
                          par le producteur du spectacle. Le festival se réserve le droit d’engager des poursuites si des ventes illégales sont constatées 
@@ -53,7 +57,7 @@
                         et de ne pas pouvoir rentrer sur le site du festival.</p>
                 </div>
 
-                <div>
+                <div class="conteneurQuestion">
                     <h3 class="question" onclick="showQuestion()">PUIS-JE CHANGER LE NOM INSCRIT SUR MON BILLET  ?<span>+</span></h3>
                     <p class="reponse">Vous recevrez un email  au printemps 2024 vous indiquant les modalités vous permettant de nommer vos billets (obligatoire). 
                         Vous aurez jusqu’à mi-juin 2023 pour nommer chaque billet.
@@ -64,48 +68,48 @@
                 
             </article>
 
-            <h2>Accessibilité</h2>
+            <h2 class="faqTopic">Accessibilité</h2>
 
             <article id="faqAcces" >
 
-                <div >
+                <div class="conteneurQuestion">
                     <h3 class="question" onclick="showQuestion()">Y-A-T'IL DES PARKINGS RESERVES AUX PMR?<span>+</span></h3>
                     <p class="reponse">Pour accéder au parking PMR, se munir du macaron ou de tout justificatif médical datant de moins d’un mois
                          à présenter aux bénévoles des parkings qui vous dirigeront alors vers l’espace réservé.</p>
                 </div>
 
-                <div >
-                    <h3 class="question" onclick="showQuestion()">Y-A-T'IL DES ESPACES SPECTACLE DEDIES AU PMR?<span>+</span></h3>
+                <div class="conteneurQuestion">
+                    <h3 class="question" onclick="showQuestion()">Y-A-T'IL DES ESPACES SPECTACLE DEDIES AUX PMR?<span>+</span></h3>
                     <p class="reponse"> il suffit de se présenter aux bénévoles avec vos justificatifs et vous serez alors dirigés vers l’espace réservé.
                          Une personne pourra éventuellement vous accompagner dans cet espace sous réserve de place disponible. A défaut, elle pourra s’installer à proximité.</p>
                 </div>
                 
             </article>
 
-            <h2>Formulaire de contact</h2>
+            <h2 class="faqTopic">Formulaire de contact</h2>
 
             <form id="formContact" class="container d-flex flex-lg-row  flex-column">
 
                 <div class="col-lg-4 d-flex flex-column">
                     <label for="fName">Prénom*</label>
-                    <input type="text" name="fName" id="fName" placeholder="Entrez votre prénom" required>
+                    <input type="text" name="fName" class="inputForm" id="fName" placeholder="Entrez votre prénom" required>
                 
                     <label for="mail">Email*</label>
-                    <input type="text" name="mail" id="mail" placeholder="Entrez une adresse mail valide" required>
+                    <input type="text" name="mail" class="inputForm" id="mail" placeholder="Entrez une adresse mail valide" required>
                 </div>
                 
                 <div class="col-lg-4 d-flex flex-column">
                     <label for="lName">Nom*</label>
-                    <input type="text" name="lName" id="lName" placeholder="Entrez votre nom" required>
+                    <input type="text" name="lName" class="inputForm" id="lName" placeholder="Entrez votre nom" required>
 
                     <label for="formTelephone">Téléphone</label>
-                    <input type="text" name="telephone" id="formTelephone" placeholder="Numéro de téléphone">
+                    <input type="text" name="telephone" class="inputForm" id="formTelephone" placeholder="Numéro de téléphone">
                 </div>
 
                 <div class="col-lg-4 d-flex flex-column">       
                     <div id="formMessage" class="d-flex flex-column ">
                         <label for="message">Message</label>
-                        <textarea class="d-flex align-self-stretch" name="message" id="message" placeholder="Entrez votre message"></textarea>
+                        <textarea class="d-flex align-self-stretch inputForm" name="message" id="message" placeholder="Entrez votre message"></textarea>
                     </div>
 
                     <button id="btnsubmit" type="submit"> ENVOYEZ </button>

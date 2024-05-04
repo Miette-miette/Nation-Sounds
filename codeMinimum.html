@@ -9,26 +9,32 @@
     </head>
     
     <body>
-        <header>
+        <header class="d-flex flex-row justify-content-between">
             <div>
-                <img src="./media/logo.png" alt="logo" id="logo">
+                <a href="index.html"> <img src="./media/logo.png" alt="logo" id="logo" width="70"></a>
+            </div>
+            <div id="menuBtn" onclick="showMenu()">
+                <img src="./media/icons/list.svg" alt="icone menu" width="70" >
             </div>
         </header>
         
-        <nav>
+        <nav id="menuInfo">
             <ul>
-                <li>Progammations</li>
+                <li><a href="programme.html"> Progammations</a></li>
                 <li>Concerts</li>
-                <li><a href="https://www.ticketmaster.fr/fr"></a>Billetterie</li>
+                <li><a href="https://www.ticketmaster.fr/fr">Billetterie</a></li>
                 <li>Informations pratiques</li>
                 <li>Carte interactive</li>
-                <li>Réseaux sociaux</li>
-                <li>Partenaires</li>
-                <li>Concerts</li>
+                <li><a> Réseaux sociaux</a></li>
+                <li> Partenaires</li>
+                <li><a href="FAQ.html"> FAQ</a></li>
             </ul>
         </nav>
+
         <footer>
             
         </footer>
+        <script src="/script/menu.js"></script>
+
     </body>
 </html>
