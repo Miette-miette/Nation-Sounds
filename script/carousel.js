@@ -1,8 +1,9 @@
 import dataCMS from './dataCMS.js';
 import fetchRessource from './fetchressource.js';
 
-let data= await dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts");
-console.log(data);
+let articleCMS= await dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts");
+    articleCMS=JSON.stringify(articleCMS);
+    console.log(articleCMS);
 
 let carouselTemplate= await fetchRessource("./templates/carouselCard.html");
 console.log(carouselTemplate);

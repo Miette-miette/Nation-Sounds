@@ -8,5 +8,7 @@
         width: 60%;
     }
 
-    
+    li {
+        font-size: 40px;
+    }
 }

@@ -9,7 +9,7 @@ main{
 }
 
 
-/* TEXTES*/
+/*STYLE DE BASE ET TEXTES */
 
 h1{
     font-family: "Caprasimo", serif;
@@ -37,14 +37,30 @@ p, label{
     color: #3f292e;
 }
 
-li{
+li {
     font-family: "Afacad", sans-serif;
-    font-optical-sizing: auto;
     color: beige;
+    font-size: 50px;
+    list-style: none;
 }
 
 a{
+    color: beige;
     text-decoration: none;
+}
+
+a:hover{
+    color: #E47161;
+}
+
+button, .button-style {
+    background-color:#E47161;
+    padding: 2%;
+    margin: 2%;
+    border-radius: 8px;
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    color: beige;
 }
 
 /* HEADER */
@@ -64,6 +80,7 @@ header{
 #menuBtn{
     position: relative;
     z-index: 4;
+    cursor: pointer;
 }
 
 @keyframes menuSlide {
@@ -85,12 +102,11 @@ header{
     width: 100%;
     height: 100%;
     padding-top: 50px;
-    margin-top: -150px;
     animation: menuSlide 2s ease 0s 1 normal ;
     z-index: 3;
 }
 #menuInfo>ul{
-    padding-top: 10%;
+    padding-top: 8%;
 }
 
 /*FOOTER*/
@@ -157,6 +173,7 @@ footer {
     border-color: #492E34;
     border-radius: 15px;
     margin: 1% 0;
+    cursor: pointer;
 }
 
 .inputForm {
@@ -167,6 +184,8 @@ footer {
     border-radius: 15px;
     margin: 1%;
 }
+
+
 
 /*RESEAUX SOCIAUX*/
 
