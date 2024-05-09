@@ -51,6 +51,9 @@ a{
 
 header{
     padding: 2%;
+    position: fixed;
+    width: 100%;
+    z-index: 4;
 }
 
 #logo{
@@ -75,6 +78,7 @@ header{
 
 #menuInfo{
     display: none;
+    justify-content: center;
     position: absolute;
     background-color: #492E34;
     color: beige;
@@ -96,9 +100,17 @@ footer {
     background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 600px;
+    padding: 15%;
 }
 
+
+
 /*Accueil*/
+
+#bienvenue>h1{
+    padding-top: 20%;
+}
 
 @keyframes logoRotation {
     0%{
