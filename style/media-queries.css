@@ -1,14 +1,19 @@
 @media (max-width: 768px) {
 
+    main {
+        padding: 100px 5%;
+    }
+
+    #menuInfo>ul>li {
+        padding-top: 10%;
+        font-size: 30px;
+    }
+
     #logoCouronne{
         width: 70%;
     }
 
     #couronne{
         width: 60%;
-    }
-
-    li {
-        font-size: 40px;
     }
 }

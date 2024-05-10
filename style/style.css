@@ -37,12 +37,7 @@ p, label{
     color: #3f292e;
 }
 
-li {
-    font-family: "Afacad", sans-serif;
-    color: beige;
-    font-size: 50px;
-    list-style: none;
-}
+
 
 a{
     color: beige;
@@ -56,11 +51,16 @@ a:hover{
 button, .button-style {
     background-color:#E47161;
     padding: 2%;
-    margin: 2%;
+    margin: 1%;
     border-radius: 8px;
     font-family: "Afacad", sans-serif;
     font-optical-sizing: auto;
     color: beige;
+    cursor: pointer;
+}
+
+button:hover, .button-style:hover{
+    background-color:#8f505e;
 }
 
 /* HEADER */
@@ -109,6 +109,13 @@ header{
     padding-top: 8%;
 }
 
+#menuInfo>ul>li {
+    font-family: "Afacad", sans-serif;
+    color: beige;
+    font-size: 50px;
+    list-style: none;
+}
+
 /*FOOTER*/
 
 footer {
@@ -118,6 +125,11 @@ footer {
     background-size: cover;
     height: 600px;
     padding: 15%;
+    color: beige;
+}
+
+footer>div>div>p{
+    color: beige;
 }
 
 
@@ -158,8 +170,23 @@ footer {
     filter: drop-shadow(0 5px #8f505e);
 }
 
+/* CONCERT */
+
+.sceneConteneur{
+    background-color: beige;
+    padding: 10px 25px 1px 25px;
+    border-style: solid;
+    border-color: #492E34;
+    border-radius: 15px;
+    margin: 1% 0;
+}
 
 /* FAQ */
+
+#faqHeader>h1{
+    padding: 8%;
+}
+
 .faqTopic{
     padding: 2% 0;
 }

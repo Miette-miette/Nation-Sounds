@@ -9,11 +9,13 @@ export default async function dataCMS(src=null){
   xhr.onload = () => {
     if (xhr.readyState == 4 && xhr.status == 200) {
       const data = xhr.response;
+
       console.log(data);
       console.log(data[1].title,"titre");
       console.log(data[1].id,"id");
       console.log(data[1].content,"content");
       console.log(JSON.stringify(data[1].content),"content");
+      
       return data;
     } 
     else {
