@@ -181,6 +181,24 @@ footer>div>div>p{
     margin: 1% 0;
 }
 
+.concertItem{
+    display: flex;
+    flex-direction: row;
+    background-color:#8f505e;
+    border-style: solid;
+    border-color: #492E34;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 8px;
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    color: beige;
+    cursor: pointer;
+}
+
+.concertItem>div>h3,p{
+    color: beige;
+}
 /* FAQ */
 
 #faqHeader>h1{
