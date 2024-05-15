@@ -63,6 +63,9 @@ button:hover, .button-style:hover{
     background-color:#8f505e;
 }
 
+.active{
+    background-color:#8f505e;
+}
 /* HEADER */
 
 header{
@@ -174,7 +177,7 @@ footer>div>div>p{
 
 .sceneConteneur{
     background-color: beige;
-    padding: 10px 25px 1px 25px;
+    padding: 10px 10px 1px 10px;
     border-style: solid;
     border-color: #492E34;
     border-radius: 15px;
@@ -184,6 +187,7 @@ footer>div>div>p{
 .concertItem{
     display: flex;
     flex-direction: row;
+    align-items: center;
     background-color:#8f505e;
     border-style: solid;
     border-color: #492E34;
@@ -196,9 +200,19 @@ footer>div>div>p{
     cursor: pointer;
 }
 
-.concertItem>div>h3,p{
+.concertItem>div>h3,.concertItem>div>p{
     color: beige;
+    margin: 0;
 }
+
+.concertItem>img{
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 2% 5%;
+    /*border: solid 3px #492E34;*/
+}
+
+
 /* FAQ */
 
 #faqHeader>h1{

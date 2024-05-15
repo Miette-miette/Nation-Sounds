@@ -16,4 +16,15 @@
     #couronne{
         width: 60%;
     }
+
+    .sceneBtn {
+        position: fixed;
+        bottom: 0;
+        background-color: beige;
+        width: 100%;
+        height: 80px;
+        padding: 2%;
+        border-top: solid #492E34;
+    }
+    
 }
