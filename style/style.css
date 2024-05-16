@@ -5,7 +5,7 @@ body{
 }
 
 main{
-    padding: 5% 20%;
+    padding: 5% 15%;
 }
 
 
@@ -175,13 +175,14 @@ footer>div>div>p{
 
 /* CONCERT */
 
-.sceneConteneur{
+.sceneConteneur {
+    width: 480px;
     background-color: beige;
-    padding: 10px 10px 1px 10px;
+    padding: 10px 15px 10px 15px;
     border-style: solid;
     border-color: #492E34;
     border-radius: 15px;
-    margin: 1% 0;
+    margin: 1%;
 }
 
 .concertItem{
@@ -208,8 +209,8 @@ footer>div>div>p{
 .concertItem>img{
     border-radius: 50%;
     object-fit: cover;
-    margin: 2% 5%;
-    /*border: solid 3px #492E34;*/
+    margin: 0 18px 0 8px;
+    border: solid 2px beige;
 }
 
 

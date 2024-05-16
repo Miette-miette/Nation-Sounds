@@ -1,7 +1,10 @@
 @media (max-width: 768px) {
 
     main {
+        display: flex;
         padding: 100px 5%;
+        justify-content: center;
+        flex-direction: column;
     }
 
     #menuInfo>ul>li {
@@ -26,5 +29,13 @@
         padding: 2%;
         border-top: solid #492E34;
     }
+    .sceneConteneur{
+        width: 100%;
+        padding: 10px 10px 1px 10px;
+        margin: 1% 0;
+    }
     
+    .concertItem>img{
+        margin: 2% 5%;
+    }
 }

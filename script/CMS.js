@@ -65,16 +65,8 @@ export default function CMS(){
       template=template.replace(`%date%`, data.date);
       template=template.replace(`%scene%`, data.scene);
       template=template.replace(`%heure%`, data.heure);
-      console.log(template);
-          
-
       return template;
     }   
-
-
- //Fonction filtrage par jour et ensuite scene
-
-  
 }
  
 

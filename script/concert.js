@@ -6,16 +6,19 @@ let cms= new CMS();
 
 let filtre= new filtreProgramme;
 
-let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts");// Articles de Nation Sounds WP 
+//CATEGORIE CONCERT ID=18
+
+let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=18&per_page=40");// Articles Categorie Concert de Nation Sounds WP 
 console.log(articleCMS);
 
-let dataArticle= await cms.formateur(articleCMS);
+let dataArticle= cms.formateur(articleCMS);
 console.log(dataArticle); //données formatées
 
 let concertTemplate= await fetchRessource("./templates/concertTemplate.html"); //Template de la page concert
 
 
-//Filtrage par scene et par jour AJOUTER ADD EVENT LISTENER
+
+//Filtrage par scene et par jour 
 
 //Fonction d'affichage par scenes
 
@@ -61,50 +64,42 @@ function affichageScenes(tabJour){
     document.getElementById('prisme').innerHTML=prisme.join(' ');
 }
 
-
 //Vendredi
 
-let vendredi=new Date(2024, 0o6, 26);
-let tabVendredi=[];
-
 function concertVendredi(){
-
+    let vendredi=new Date(2024, 0o6, 26);
+    let tabVendredi=[];
     filtre.filtreJour(dataArticle,vendredi,tabVendredi);
     affichageScenes(tabVendredi);
-
 }
 concertVendredi();
+
+let inputVendredi=document.getElementById("vendredi")
+console.log(inputVendredi);
+inputVendredi.addEventListener('click', concertVendredi)
 
 //Samedi
 
 let samedi=new Date(2024, 0o6, 27);
-let tabSamedi=[];
 
-function concertSamedi(){
+let inputSamedi=document.getElementById("samedi")
+inputSamedi.addEventListener('click', ()=>{
+    let tabSamedi=[];
     filtre.filtreJour(dataArticle,samedi,tabSamedi);
     affichageScenes(tabSamedi);
-}
-
+    console.log(tabSamedi);
+})
 
 //Dimanche
 
 let dimanche= new Date(2024, 0o6, 28);
-let tabDimanche=[];
+console.log(dimanche);
 
-function concertDimanche(){
-    filtre.filtreJour(dataArticle,dimanche,tabDimanche)
-    affichageScenes(tabSamedi);
-}
-
-
-
-
-
-
-
-
-
-
-
-
+let inputDimanche=document.getElementById("dimanche")
+inputDimanche.addEventListener('click', ()=>{
+    let tabDimanche=[];
+    filtre.filtreJour(dataArticle,dimanche,tabDimanche);
+    affichageScenes(tabDimanche);
+    console.log(tabDimanche);
+})
 

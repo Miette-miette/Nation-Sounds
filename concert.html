@@ -13,10 +13,10 @@
     <body>
         <header class="d-flex flex-row justify-content-between">
             <div>
-                <a href="index.html"> <img src="./media/logo.png" alt="logo" id="logo" width="70"></a>
+                <a href="index.html"> <img src="./media/logo.png" alt="logo" id="logo" width="60"></a>
             </div>
             <div id="menuBtn" onclick="showMenu()">
-                <img src="./media/icons/list.svg" alt="icone menu" width="70" id="iconMenu">
+                <img src="./media/icons/list.svg" alt="icone menu" width="60" id="iconMenu">
             </div>
         </header>
         
@@ -60,64 +60,66 @@
                     <img src="./media/illustration/fleur2.png" width="80px">
                 </div>
                 
-                <p>Retrouvez la programmation des 5 scènes</p>
+                <p>Retrouvez la programmation des concerts par jour</p>
 
                 <div class="sceneBtn d-flex flex-row justify-content-center">
-                    <button id="vendredi" class="button-style active" onclick="concertVendredi()" >VEN 26/07</button>
-                    <button id="samedi"  class="button-style" onclick="concertSamedi()" >SAM 27/07</button>
-                    <button id="dimanche"  class="button-style" onclick="concertDimanche()">DIM 28/07</button>
+                    <button id="vendredi" class="button-style">VEN 26/07</button>
+                    <button id="samedi"  class="button-style" >SAM 27/07</button>
+                    <button id="dimanche"  class="button-style">DIM 28/07</button>
                 </div>
 
             </div>
-            <article class="sceneConteneur">
-                <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
-                    <img src="./media/euphorie.png" width="80px">
-                    <h2>EUPHORIE</h2>
-                </div> 
+            <div id="scenes" class="d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center align-items-md-start">
+                <article class="sceneConteneur d-flex flex-column justify-content-center">
+                    <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
+                        <img src="./media/euphorie.png" width="80px">
+                        <h2>EUPHORIE</h2>
+                    </div> 
 
-                <div id="euphorie"></div>
+                    <div id="euphorie"></div>
 
-            </article>
+                </article>
 
-            <article class="sceneConteneur">
-                <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
-                    <img src="./media/fusion.png" width="80px">
-                    <h2>FUSION</h2>
-                </div>
+                <article class="sceneConteneur">
+                    <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
+                        <img src="./media/fusion.png" width="80px">
+                        <h2>FUSION</h2>
+                    </div>
 
-                <div id="fusion"></div>
+                    <div id="fusion"></div>
 
-            </article>
+                </article>
 
-            <article class="sceneConteneur">
-                <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
-                    <img src="./media/reverie.png" width="80px">
-                    <h2>REVERIE</h2>
-                </div>
+                <article class="sceneConteneur">
+                    <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
+                        <img src="./media/reverie.png" width="80px">
+                        <h2>REVERIE</h2>
+                    </div>
 
-                <div id="reverie"></div>
+                    <div id="reverie"></div>
 
-            </article>
+                </article>
 
-            <article class="sceneConteneur">
-                <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
-                    <img src="./media/resonance.png" width="80px">
-                    <h2>RESONANCE</h2>
-                </div>
+                <article class="sceneConteneur">
+                    <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
+                        <img src="./media/resonance.png" width="80px">
+                        <h2>RESONANCE</h2>
+                    </div>
 
-                <div id="resonance"></div>
+                    <div id="resonance"></div>
 
-            </article>
+                </article>
 
-            <article class="sceneConteneur">
-                <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
-                    <img src="./media/prisme.png" width="80px">
-                    <h2>PRISME</h2>
-                </div>
+                <article class="sceneConteneur">
+                    <div class="sceneHeader d-flex flex-row justify-content-center align-items-center">
+                        <img src="./media/prisme.png" width="80px">
+                        <h2>PRISME</h2>
+                    </div>
 
-                <div id="prisme"></div>
+                    <div id="prisme"></div>
 
-            </article>
+                </article>
+            </div>
         </main>
 
 
