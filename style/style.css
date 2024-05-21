@@ -213,7 +213,40 @@ footer>div>div>p{
     border: solid 2px beige;
 }
 
+/*PROGRAMMATION*/
 
+.progItem{
+    background-image: none;
+    background-size: cover;
+    background-position: center;
+    width: 300px;
+    height: 320px;
+    justify-content: end;
+    background-color:#8f505e;
+    border-style: solid;
+    border-color: #492E34;
+    margin: 1%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.progItem>div>h3,.progItem>div>p{
+    color: beige;
+    margin: 0;
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+}
+.progItem>div>h3{
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    font-style: larger;
+    font-size: 34px;
+}
+
+.progTxt{
+    background: linear-gradient(0deg, rgba(0,0,0,0.6278886554621849) 49%, rgba(255,255,255,0) 100%);
+    padding: 20px;
+}
 /* FAQ */
 
 #faqHeader>h1{

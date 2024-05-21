@@ -61,17 +61,56 @@
                 </div>
                 
                 <p>Retrouvez la programmation complete de Nation Sounds Festival!</p>
+                
 
-                <div class="progBtn d-flex flex-row justify-content-center">
-                    <p>Filtres</p>
-                    <button id="jour" class="button-style">Jour</button>
-                    <button id="heure"  class="button-style" >Horaire</button>
-                    <button id="lieu"  class="button-style">Lieu</button>
-                    <button id="type"  class="button-style">Type</button>
+                <div class="progBtn d-flex flex-row flex-wrap justify-content-center align-items-center">
+                    
+                    <h2>Filtres:</h2>
+
+                    <div class="filtreConteneur d-flex flex-column">
+                    <label for="jour">Jours</label>
+                        <select id="jour" name="jour" class="button-style">
+                            <option>Tous</option>
+                            <option value="vendredi">Vendredi 26/07</option>
+                            <option value="samedi">Samedi 27/07</option>
+                            <option value="dimanche">Dimanche 28/07</option>
+                        </select>
+                    </div>
+
+                    <div class="filtreConteneur d-flex flex-column">
+                        <label for="heure">Horaires</label>
+                        <input type="range" name="heure" id="heure" min="14:00" max="02:00">
+                        </input>
+                    </div>
+
+                    <div class="filtreConteneur d-flex flex-column">
+                    <label for="lieu">Lieux</label>
+                        <select id="lieu" name="lieu" class="button-style">
+                            <option>Tous</option>
+                            <option value="Euphorie">Scene Euphorie</option>
+                            <option value="Fusion">Scene Fusion</option>
+                            <option value="Reverie">Scene Reverie</option>
+                            <option value="Resonance">Scene Resonance</option>
+                            <option value="Prisme">Scene Prisme</option>
+                            <option value="Patio">Le Patio</option>
+                        </select>
+                    </div>
+
+                    <div class="filtreConteneur d-flex flex-column">
+                    <label for="type">Type d'evenement</label>
+                        <select id="type" name="type" class="button-style">
+                            <option>Tous</option>
+                            <option id="concert">Concerts</option>
+                            <option id="performance">Performances</option>
+                            <option id="atelier">Ateliers</option>
+                        </select>
+                    </div>
+
                 </div>
             </div>
 
-            <div id="progConteneur"></div>
+            <div id="progConteneur" class="d-flex flex-row flex-wrap justify-content-center">     
+            </div>
 
         </main>
 

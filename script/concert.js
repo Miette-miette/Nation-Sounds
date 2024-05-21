@@ -16,90 +16,51 @@ console.log(dataArticle); //données formatées
 
 let concertTemplate= await fetchRessource("./templates/concertTemplate.html"); //Template de la page concert
 
+let tabScenes=["Euphorie","Fusion","Reverie","Resonance","Prisme"];
 
+//Objet jour avec ID 
 
-//Filtrage par scene et par jour 
+let jour=[
+    {
+        date:new Date(2024, 0o6, 26),
+        idJour:"vendredi"
+    },
+    {
+        date:new Date(2024, 0o6, 27),
+        idJour:"samedi"
+    },
+    {
+        date:new Date(2024, 0o6, 28),
+        idJour:"dimanche"
+    },
+    ];
 
 //Fonction d'affichage par scenes
 
-function affichageScenes(tabJour){
-    //EUPHORIE
-    let euphorie=[];
-    filtre.filtreScene(tabJour,"Euphorie",euphorie)
-    for(let i=0;i<euphorie.length;i++){
-        euphorie[i]= cms.replaceTemplate(euphorie[i],concertTemplate);
+function affichageScenes(tabJour){ 
+    for (let j=0;j<tabScenes.length;j++){
+        let scene=[];
+        filtre.filtreScene(tabJour,tabScenes[j],scene)
+        for(let i=0;i<scene.length;i++){
+            scene[i]= cms.replaceTemplate(scene[i],concertTemplate);
+        }
+    document.getElementById(tabScenes[j].toLowerCase()).innerHTML=scene.join(' ');
+    console.log(tabScenes[j].toLowerCase());
     }
-    document.getElementById('euphorie').innerHTML=euphorie.join(' ');
-
-    //FUSION
-    let fusion=[];
-    filtre.filtreScene(tabJour,"Fusion",fusion)
-    for(let i=0;i<fusion.length;i++){
-        fusion[i]= cms.replaceTemplate(fusion[i],concertTemplate);
-    }
-    document.getElementById('fusion').innerHTML=fusion.join(' ');
-
-    //REVERIE
-    let reverie=[];
-    filtre.filtreScene(tabJour,"Reverie",reverie)
-    for(let i=0;i<reverie.length;i++){
-        reverie[i]= cms.replaceTemplate(reverie[i],concertTemplate);
-    }
-    document.getElementById('reverie').innerHTML=reverie.join(' ');
-
-    //RESONANCE
-    let resonance=[];
-    filtre.filtreScene(tabJour,"Resonance",resonance)
-    for(let i=0;i<resonance.length;i++){
-        resonance[i]= cms.replaceTemplate(resonance[i],concertTemplate);
-    }
-    document.getElementById('resonance').innerHTML=resonance.join(' ');
-
-    //PRISME
-    let prisme=[];
-    filtre.filtreScene(tabJour,"Prisme",prisme)
-    for(let i=0;i<prisme.length;i++){
-        prisme[i]= cms.replaceTemplate(prisme[i],concertTemplate);
-    }
-    document.getElementById('prisme').innerHTML=prisme.join(' ');
 }
 
-//Vendredi
+//Fonction filtrage par jour
 
-function concertVendredi(){
-    let vendredi=new Date(2024, 0o6, 26);
-    let tabVendredi=[];
-    filtre.filtreJour(dataArticle,vendredi,tabVendredi);
-    affichageScenes(tabVendredi);
+function concertJour(jour){
+    let tabJour=[];
+    filtre.filtreJour(dataArticle,jour,tabJour);
+    affichageScenes(tabJour);
 }
-concertVendredi();
 
-let inputVendredi=document.getElementById("vendredi")
-console.log(inputVendredi);
-inputVendredi.addEventListener('click', concertVendredi)
+//AddEventListener sur les inputs jour
 
-//Samedi
-
-let samedi=new Date(2024, 0o6, 27);
-
-let inputSamedi=document.getElementById("samedi")
-inputSamedi.addEventListener('click', ()=>{
-    let tabSamedi=[];
-    filtre.filtreJour(dataArticle,samedi,tabSamedi);
-    affichageScenes(tabSamedi);
-    console.log(tabSamedi);
-})
-
-//Dimanche
-
-let dimanche= new Date(2024, 0o6, 28);
-console.log(dimanche);
-
-let inputDimanche=document.getElementById("dimanche")
-inputDimanche.addEventListener('click', ()=>{
-    let tabDimanche=[];
-    filtre.filtreJour(dataArticle,dimanche,tabDimanche);
-    affichageScenes(tabDimanche);
-    console.log(tabDimanche);
-})
-
+for (let c=0;c<jour.length;c++){
+    let inputJour=document.getElementById(jour[c].idJour)
+    inputJour.addEventListener('click', ()=> concertJour(jour[c].date))
+}
+concertJour(jour[0].date);

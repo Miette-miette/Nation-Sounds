@@ -3,10 +3,12 @@ export default function filtreProgramme(){
     // Filtrage par jour et tri par scene (A-Z)
     this.filtreJour=function(data,jour,tabJour){
         for (let d=0;d<data.length;d++){
+            console.log(data[d]);
+            console.log(jour);
             if (data[d].dateF==jour){
                 
                 tabJour.push(data[d]);
-                tabJour.sort((a,b)=>(a.scene<b.scene)?1:-1)//trier par scene  
+                tabJour.sort((a,b)=>(a.scene>b.scene)?1:-1)//trier par scene  
                  
             }   
         } console.log(tabJour, "affichage jour");
@@ -16,6 +18,7 @@ export default function filtreProgramme(){
 
     this.filtreScene=function(tabJour,scene,tabScene){
         for(let t=0;t<tabJour.length;t++){
+            console.log(tabJour);
             if(tabJour[t].scene==scene){
                 tabScene.push(tabJour[t])
                 tabScene.sort((a,b)=>(a.heureF>b.heureF ? 1:-1)) //trier par heure 
@@ -23,6 +26,7 @@ export default function filtreProgramme(){
             }
         }console.log(tabScene, "affichage scene");
     }
+
 
     
 }

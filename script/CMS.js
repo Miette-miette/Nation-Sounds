@@ -51,7 +51,6 @@ export default function CMS(){
       
           dataGlobale.push(dataConcert);
       }
-      
       return dataGlobale
     }
 
