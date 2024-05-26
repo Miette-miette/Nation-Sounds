@@ -43,7 +43,7 @@
                 </li>
                 <li> 
                     <img src="./media/illustration/metal.png" width="50px">
-                    PARTENAIRE
+                    <a href="./partenaire.html">PARTENAIRE</a>
                 </li>
                 <li>
                     <img src="./media/illustration/forme-organique4.png" width="50px">
@@ -57,34 +57,54 @@
                
                 <div id="logoAnim" class="d-flex justify-content-center align-items-center">
                     <img src="./media/illustration/courone.png" id="couronne">
-                    <img src="./media/illustration/logoGM.png" id="logoCouronne">
+                    <h1 id="logoCouronne">Nation<br> Sounds<br> 2024</h1>
                 </div>
 
-                 <h1>Nation Sounds 2024</h1>
+                 
                 <input type="button" value="Découvrez le programme" class="button-style">
             </article>
 
-            <article id="affiche">
+            <article id="affiche" >
                 <h2>Les artistes</h2>
-                <div id="conteneurCarousel">
-                    <div class="carouselCard">
+                <div id="carouselArtiste" class="carousel slide">
+                    <div id="conteneurCarousel" class="d-flex flex-row carousel-inner">
                         
                     </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselArtiste" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselArtiste" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
             </article>
 
             <article id="billeterie" >
                 <h2>Billetterie</h2>
-                <input type="button" class="button-style">
+                <p>Obtenez vos places juste ici!</p>
+                <input type="button" href="https://www.ticketmaster.fr/fr" target="_blank" rel="noreferrer" class="button-style" value="billeterie">
+            </article>
+
+            <article id="news">
+                <h2>Actualités du festival</h2>
+
             </article>
 
             <article id="asso">
-                <div>
-                    <img>
-                </div>
+                
                 <div>
                     <h2>Un festival humanitaire</h2>
                     <img>
+                </div>
+                <div>
+                    <p>National Sounds se veut être un festival inclusif et se distingue par son engagement humanitaire, visant à rassembler des personnes de diverses origines et à promouvoir 
+                        la solidarité globale. En intégrant des initiatives telles que des collectes de fonds pour des causes sociales, des stands d'information 
+                        sur des problématiques mondiales et des ateliers de sensibilisation, le festival ne se contente pas de célébrer la diversité musicale, 
+                        mais il agit également comme une plateforme pour le changement social. Grâce à des partenariats avec des organisations caritatives et à l'inclusion 
+                        d'artistes de communautés marginalisées, ce type de festival incarne un esprit d'unité et de bienveillance, offrant une expérience enrichissante 
+                        tant sur le plan culturel qu'humanitaire.</p>
                 </div>
             </article>
         </main>
@@ -93,6 +113,7 @@
             
         </footer>
         
+        <script src="../script/accueil.js" type="module"></script>
         <script src="../script/menu.js"></script>
         
         </body>

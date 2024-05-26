@@ -6,17 +6,26 @@ let cms= new CMS();
 
 let filtre= new filtreProgramme;
 
-//CATEGORIE CONCERT ID=18
-
 let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?per_page=60");// Articles programmation de Nation Sounds WP 
 console.log(articleCMS);
 
-let dataArticle= cms.formateur(articleCMS);
-console.log(dataArticle); //données formatées
+let dataArticle= cms.formateur(articleCMS);//données formatées
+console.log(dataArticle); 
 
 let progTemplate= await fetchRessource("./templates/programmeTemplate.html"); //Template de la page programme
 
-//Fonction affichage
+let progFiltre={//DONNEES DES FILTRES
+    
+   "jour": "" ,
+     
+    "heure": 14,
+
+    "lieux":"tous",
+    
+    "type":"tous",  
+}
+
+//Fonction AFFICHAGE
 
 function affichageItem(tab){  
    
@@ -26,36 +35,7 @@ function affichageItem(tab){
     document.getElementById('progConteneur').innerHTML=tab.join(' '); 
 }
 
-//FAIRE UN FILTRE GLOBAL AVEC TOUT LES PARAM
-
-/*let progFiltre={
-    "jour":[
-        {
-            date:new Date(2024, 0o6, 26),
-            idJour:"vendredi"
-        },
-        {
-            date:new Date(2024, 0o6, 27),
-            idJour:"samedi"
-        },
-        {
-            date:new Date(2024, 0o6, 28),
-            idJour:"dimanche"
-        }
-    ],
-
-    "horaire":{
-        min:"14:00",
-        max:"00:02",
-    },
-
-    "lieux":["Euphorie","Fusion","Reverie","Resonance","Prisme","Patio"],
-    
-    "type":["concert","performance","atelier"],
-    
-}*/
-
-//Affichage de tout les evenements
+//Affichage ALL
 
 let all=[];
 
@@ -64,9 +44,102 @@ for (let a=0;a<dataArticle.length;a++){
 }
 affichageItem(all);
 
+
+
+//Fonction FILTRAGE 
+
+function filtrageItem(data,progFiltre){
+    let progTab=[];
+    
+    filtre.filtreAll(data,progFiltre,progTab)
+    console.log(progTab);
+    affichageItem(progTab);
+}
+
+//RECUPERER LES DONNEES DES INPUTS
+
+function filtreChange(){
+
+    //JOUR
+    progFiltre.jour=document.getElementById("jour").value;
+
+    //HEURE
+    progFiltre.heure=document.getElementById("heure").value;
+
+    //LIEU
+    progFiltre.lieux=document.getElementById("lieu").value;
+
+    //TYPE
+    progFiltre.type=document.getElementById("type").value;
+
+    console.log(progFiltre);
+    //FILTRAGE 
+    filtrageItem(dataArticle,progFiltre);
+
+}
+
+//ADD EVENT LISTENER SUR LES SELECTS ET INPUTS
+
+function setup(){
+
+    //Recuperation des input
+    let onchangeElem= document.getElementById('heure');
+    onchangeElem.addEventListener('change',filtreChange);
+    
+    //Recuperation des select
+    let onchangeSelect= document.getElementsByTagName('select');
+    for (let s=0;s<onchangeSelect.length;s++){
+      onchangeSelect[s].addEventListener('change',filtreChange);
+    } 
+  }
+
+setup();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//CATEGORIE CONCERT ID=18
+
+    //IDEE POUR UTILISER LES CATEGORIES
+
+ /*selectJour.addEventListener('change', ()=>{
+   for (let j=0;j<jour.length;j++){
+              
+        let jourId=jour[j].idJour;
+
+        if(selectJour.value==jourId){ 
+
+            articleCMS=cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?category=vendredi&per_page=40"); //vendredi
+            console.log(articleCMS);
+            let articleJour=cms.formateur(articleCMS);
+            console.log(articleJour);
+            affichageItem(articleJour);
+            break;
+        }}
+    })*/
+
+//CODE QUI MARCHE MAIS PAS OPTI
+
 //Fonction filtrage par jour
 
-let jour=[
+/*let jour=[
     {
         date:new Date(2024, 0o6, 26),
         idJour:"vendredi"
@@ -86,6 +159,8 @@ function progJour(jour){//Fonction de filtrage des datas du CMS + fonction d'aff
     filtre.filtreJour(dataArticle,jour,tabJour);
     affichageItem(tabJour);
 }
+
+//AddEventListener JOUR
 
 let selectJour=document.getElementById("jour");
 
@@ -109,14 +184,14 @@ function progLieu(lieu){
     affichageItem(tabLieu);
 }
 
+//AddEventListener LIEU
+
 let selectLieu=document.getElementById("lieu");
 console.log(lieux);
 
 selectLieu.addEventListener('change', ()=>{
     for (let l=0;l<lieux.length;l++){
-        console.log(lieux[l]);
         if(selectLieu.value==lieux[l]){
-            console.log("wesh");
             progLieu(lieux[l]);
             break;
         }
@@ -125,27 +200,43 @@ selectLieu.addEventListener('change', ()=>{
 
 // Fonction filtrage par type
 
-let type=["concert","performance","atelier"]
+let type=["concert","performance","atelier"];
 
+function progType(type){
+    let tabType=[]; 
+    filtre.filtreType(dataArticle,type,tabType);
+    console.log(tabType);
+    affichageItem(tabType);
+}
 
+//AddEventListener TYPE
 
+let selectType=document.getElementById("type");
 
-
-    //IDEE POUR UTILISER LES CATEGORIES
-
- /*selectJour.addEventListener('change', ()=>{
-   for (let j=0;j<jour.length;j++){
-              
-        let jourId=jour[j].idJour;
-
-        if(selectJour.value==jourId){ 
-
-            articleCMS=cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?category=vendredi&per_page=40"); //vendredi
-            console.log(articleCMS);
-            let articleJour=cms.formateur(articleCMS);
-            console.log(articleJour);
-            affichageItem(articleJour);
+selectType.addEventListener('change', ()=>{ 
+    for (let t=0;t<type.length;t++){  
+        if(selectType.value==type[t]){
+            progType(type[t]);
             break;
-        }}
-    })*/
+        }
+    }
+})
+
+// Fonction filtrage par heure
+
+function progHeure(heure){
+    let tabHeure=[]; 
+    filtre.filtreHeure(dataArticle,heure,tabHeure);
+    console.log(tabHeure);
+    affichageItem(tabHeure);
+}
+
+//AddEventListener HEURE
+
+let inputHeure=document.getElementById("heure");
+
+inputHeure.addEventListener('change',()=>{
+    progHeure(inputHeure.value);
+    console.log(inputHeure.value);
+})*/
 

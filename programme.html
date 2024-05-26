@@ -43,7 +43,7 @@
                 </li>
                 <li> 
                     <img src="./media/illustration/metal.png" width="50px">
-                    PARTENAIRE
+                    <a href="./partenaire.html">PARTENAIRE</a>
                 </li>
                 <li>
                     <img src="./media/illustration/forme-organique4.png" width="50px">
@@ -71,15 +71,15 @@
                     <label for="jour">Jours</label>
                         <select id="jour" name="jour" class="button-style">
                             <option>Tous</option>
-                            <option value="vendredi">Vendredi 26/07</option>
-                            <option value="samedi">Samedi 27/07</option>
-                            <option value="dimanche">Dimanche 28/07</option>
+                            <option value="Vendredi">Vendredi 26/07</option>
+                            <option value="Samedi">Samedi 27/07</option>
+                            <option value="Dimanche">Dimanche 28/07</option>
                         </select>
                     </div>
 
                     <div class="filtreConteneur d-flex flex-column">
-                        <label for="heure">Horaires</label>
-                        <input type="range" name="heure" id="heure" min="14:00" max="02:00">
+                        <label for="heure">Horaires (à partir de)</label>
+                        <input type="time" name="heure" id="heure" value="14:00">
                         </input>
                     </div>
 
@@ -87,12 +87,12 @@
                     <label for="lieu">Lieux</label>
                         <select id="lieu" name="lieu" class="button-style">
                             <option>Tous</option>
-                            <option value="Euphorie">Scene Euphorie</option>
-                            <option value="Fusion">Scene Fusion</option>
-                            <option value="Reverie">Scene Reverie</option>
-                            <option value="Resonance">Scene Resonance</option>
-                            <option value="Prisme">Scene Prisme</option>
-                            <option value="Patio">Le Patio</option>
+                            <option value="Euphorie" id="Euphorie">Scene Euphorie</option>
+                            <option value="Fusion" id="Fusion">Scene Fusion</option>
+                            <option value="Reverie" id="Reverie">Scene Reverie</option>
+                            <option value="Resonance" id="Resonance">Scene Resonance</option>
+                            <option value="Prisme" id="Prisme">Scene Prisme</option>
+                            <option value="Patio" id="Patio">Le Patio</option>
                         </select>
                     </div>
 
@@ -100,9 +100,9 @@
                     <label for="type">Type d'evenement</label>
                         <select id="type" name="type" class="button-style">
                             <option>Tous</option>
-                            <option id="concert">Concerts</option>
-                            <option id="performance">Performances</option>
-                            <option id="atelier">Ateliers</option>
+                            <option value="concert">Concert</option>
+                            <option value="performance">Performance</option>
+                            <option value="atelier">Atelier</option>
                         </select>
                     </div>
 
