@@ -6,9 +6,9 @@ let cms= new CMS();
 
 let filtre= new filtreProgramme;
 
-//CATEGORIE CONCERT ID=18
+//CATEGORIE CONCERT ID=19
 
-let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=18&per_page=40");// Articles Categorie Concert de Nation Sounds WP 
+let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=19&per_page=40");// Articles Categorie Concert de Nation Sounds WP 
 console.log(articleCMS);
 
 let dataArticle= cms.formateur(articleCMS);

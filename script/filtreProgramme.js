@@ -47,22 +47,18 @@ export default function filtreProgramme(){
     }
 
 
-    //FILTRAGE DYNAMIQUE
+    //FILTRAGE DYNAMIQUE POUR PAGE PROGRAMATION
 
     this.filtreAll=function(data,filtre,tab){
         for(let a=0;a<data.length;a++){
 
             let jourRegex=/(^\w+)/gm;
 
-            let jourSelected=data[a].date.match(jourRegex); 
+            let jourSelected=data[a].date.match(jourRegex);//Recuperer seulement le jour sur l'element date de data 
 
-            if((jourSelected[0]==filtre.jour|| filtre.jour=="Tous")&&(data[a].heureF>=filtre.heure) ){ //FILTRE OK
+            if((jourSelected[0]==filtre.jour|| filtre.jour=="Tous")&&(data[a].heureF>=filtre.heure) ){ //FILTRAGE PAR DONNEES TEMPORELLES
 
-                if((data[a].scene==filtre.lieux || filtre.lieux=="Tous") && (data[a].type==filtre.type || filtre.type=="Tous")){ //FILTRE OK 
-                    console.log(data[a].scene);
-                    console.log(filtre.lieux);
-                    console.log(data[a].type);
-                    console.log(filtre.type);
+                if((data[a].scene==filtre.lieux || filtre.lieux=="Tous") && (data[a].type==filtre.type || filtre.type=="Tous")){ //FILTRAGE PAR LIEUX ET TYPE
                     tab.push(data[a]);
                 }
             }

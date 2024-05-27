@@ -54,6 +54,22 @@ export default function CMS(){
       return dataGlobale
     }
 
+    //Fonction pour recuperer les données de la carte
+
+    this.carteData=function(articleCMS){
+
+      for(let c=0;c<articleCMS.length;c++){
+        let carteData={};
+
+        let content=articleCMS[c].content.rendered;
+        console.log(content);
+
+        carteData["content"]=content;
+
+        return carteData;
+      }
+    }
+
     //Fonction pour remplir les templates 
 
     this.replaceTemplate=function(data,template){

@@ -6,7 +6,9 @@ let cms= new CMS();
 
 let filtre= new filtreProgramme;
 
-let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?per_page=60");// Articles programmation de Nation Sounds WP 
+//CATEGORIE PROGRAMATION ID=18
+
+let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=18&per_page=60");// Articles programmation de Nation Sounds WP 
 console.log(articleCMS);
 
 let dataArticle= cms.formateur(articleCMS);//données formatées
@@ -16,12 +18,9 @@ let progTemplate= await fetchRessource("./templates/programmeTemplate.html"); //
 
 let progFiltre={//DONNEES DES FILTRES
     
-   "jour": "" ,
-     
+    "jour": "tous" ,
     "heure": 14,
-
-    "lieux":"tous",
-    
+    "lieux":"tous", 
     "type":"tous",  
 }
 
@@ -43,8 +42,6 @@ for (let a=0;a<dataArticle.length;a++){
     all.push(dataArticle[a]);   
 }
 affichageItem(all);
-
-
 
 //Fonction FILTRAGE 
 
