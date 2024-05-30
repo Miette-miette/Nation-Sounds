@@ -6,7 +6,7 @@ body{
 }
 
 main{
-    padding: 5% 15%;
+    padding: 5% 20%;
 }
 
 
@@ -128,12 +128,38 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
-    padding: 15%;
+    padding: 10% 0 10% 0;
+    color: beige;
+}
+
+#topFooter{
+    width: 100%;
+    margin-right: 100px;
+}
+
+#logoFooter{
+    margin: 2% 0 2% 5%;
+}
+
+#logoFooter>img{
+    margin: 10%;
+}
+
+#logoFooter>div>p{
     color: beige;
 }
 
 footer>div>div>p{
     color: beige;
+}
+
+#rsFooter{
+    margin: 2% 0 3% 0;
+}
+
+.footerRS{
+    width: 50px;
+    margin: 5px;
 }
 
 
@@ -182,16 +208,15 @@ footer>div>div>p{
 #affiche{
     padding-top: 30%;
     width: 100%;
+    
 }
 
-/*#conteneurCarousel{
-    padding: 0 10vw;
-    position: relative;
-    z-index: 1;
-    display: flex;
-    overflow-x:visible;
+#conteneurCarousel{
+    
+    overflow-x:scroll;
     scroll-behavior: smooth;
-}*/
+    
+}
 
 .carouselCard{
     background-image: none;
@@ -203,18 +228,21 @@ footer>div>div>p{
     background-color:#8f505e;
     border-style: solid;
     border-color: #492E34;
-    margin: 1%;
+    margin: 5px;
     border-radius: 8px;
-    cursor: pointer;
 }
 
-.carouselCard>div>h3,.carouselCard>div>p{
+.infoCard{
+    width: 230px;
+}
+
+.infoCard>h3,.infoCard>p{
     color: beige;
     margin: 0;
     font-family: "Afacad", sans-serif;
     font-optical-sizing: auto;
 }
-.carouselCard>div>h3{
+.infoCard>h3{
     font-family: "Caprasimo", serif;
     font-weight: 400;
     font-style: larger;
@@ -346,3 +374,41 @@ footer>div>div>p{
     margin: 1%;
 
 }
+
+/*PARTENAIRE*/
+
+#institutionConteneur, #entrepriseConteneur{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #8f505e;
+    border-style: solid;
+    border-color:#492E34;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 8px;
+    
+}
+
+.imgPartenaireConteneur{
+    background-color: rgb(255, 255, 255);
+    height: 140px;
+    margin: 1%;
+    border-style: solid;
+    border-color:#492E34;
+    border-radius: 8px;
+}
+
+.imgPartenaireConteneur>img{
+    width: 200px;
+    height: fit-content;
+    padding: 8%;
+    
+}
+
+/*CARTE*/
+
+#map{ 
+    height: 600px; 
+}
+

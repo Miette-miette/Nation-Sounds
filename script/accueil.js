@@ -6,7 +6,7 @@ let cms= new CMS();
 
 let filtre= new filtreProgramme;
 
-let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?per_page=60");// Articles programmation de Nation Sounds WP 
+let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=18&per_page=60");// Articles programmation de Nation Sounds WP 
 console.log(articleCMS);
 
 let dataArticle= cms.formateur(articleCMS);
@@ -37,5 +37,5 @@ for (let a=0;a<dataArticle.length;a++){
     }     
 }
 console.log(artistes);  
-affichageCarousel(artistes.slice(-8));
+affichageCarousel(artistes.slice(-6));
 
