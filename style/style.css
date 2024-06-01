@@ -410,5 +410,7 @@ footer>div>div>p{
 
 #map{ 
     height: 600px; 
+    position: relative;
+    z-index: 1;
 }
 
