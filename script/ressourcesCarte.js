@@ -7,7 +7,6 @@ export default function ressourceCarte(){
             iconUrl:url, 
             iconSize: [longueur,largeur],
         })
-        console.log(icon);
     return icon;
     }
 
@@ -20,56 +19,80 @@ export default function ressourceCarte(){
         const sizeRegex=/"iconSize":"(.*).."/gm;
         const bulleRegex=/unescape\('(.*)'\)/gm;
         const titleRegex=/"title":"(.*?),"/gm;
-        
-        for (let m=0;m<dataMarker.length;m++){
 
             let markerObj={};
         
             //Latitude
         
-            let latMarker=dataMarker[m].match(latMarkerRegex);
+            let latMarker=dataMarker.match(latMarkerRegex);
             latMarker=latMarker[0].split('[')[1]; 
             markerObj["latitude"]=latMarker;
         
             //Longitude
             
-            let lonMarker=dataMarker[m].match(lonMarkerRegex);
+            let lonMarker=dataMarker.match(lonMarkerRegex);
             lonMarker=lonMarker[0].split(',')[1]; 
             markerObj["longitude"]=lonMarker;
         
             //Title
         
-            let classMarker=dataMarker[m].match(titleRegex);
+            let classMarker=dataMarker.match(titleRegex);
             classMarker=classMarker[0].split(':')[1]; 
             classMarker=classMarker.split('"')[1]; 
-            console.log(classMarker);
+            markerObj["class"]=classMarker;
         
             //URL icon
            
-            let imgMarker=dataMarker[m].match(imgMarkerRegex);
+            let imgMarker=dataMarker.match(imgMarkerRegex);
             imgMarker=imgMarker[0].split(':"')[1];
             imgMarker=imgMarker.replace(antislashRegex,"")
         
             //Size icon
         
-            let sizeMarker=dataMarker[m].match(sizeRegex);
+            let sizeMarker=dataMarker.match(sizeRegex);
             sizeMarker=sizeMarker[0].split(':"')[1];
         
             let longueur=sizeMarker.split(',')[0];
             let largeur=sizeMarker.split(',')[1];
             largeur=largeur.split('"')[0];
         
-            markerObj["img"]=ressource.iconObj(imgMarker,longueur,largeur);
+            markerObj["img"]=this.iconObj(imgMarker,longueur,largeur);
         
             //Bulle icon
         
-            let bulle=dataMarker[m].match(bulleRegex);
+            let bulle=dataMarker.match(bulleRegex);
             bulle=bulle[0].split('\'')[1];
-            console.log(bulle);
-        
             markerObj["bulle"]=bulle;
+
+            return markerObj;       
         
-            markersTab.push(markerObj);
+    }
+
+    //affichage des marqueurs (trouver comment reset l'affichage removemap?)
+
+    this.affichageMarker=function(tab,map){
+        for (let t=0;t<tab.length;t++){
+            let markerSelected = L.marker([tab[t].latitude,tab[t].longitude],{icon: tab[t].img}).addTo(map).bindPopup(tab[t].bulle);
         }
+    }
+
+
+    // filtres de la carte
+
+    this.filtreCarte=function(data,filtre,tab){
+        //let tab=[]; 
+        for(let d=0;d<data.length;d++){ 
+                  
+            for(let filtreObj in filtre){
+                console.log(filtreObj);
+                console.log(filtre[filtreObj]);
+
+                if(data[d].class==filtreObj && filtre[filtreObj]==true){ 
+                    tab.push(data[d]);    
+                }  
+             }   
+        }
+        console.log(tab);
+        //return tab;
     }
 }
