@@ -10,7 +10,7 @@ export default function ressourceCarte(){
     return icon;
     }
 
-    this.markerObj=function(dataMarker){
+    this.markerFormatage=function(dataMarker){
 
         const latMarkerRegex=/marker\(\n( )*\[(\d*.\d*)/gm;
         const lonMarkerRegex=/marker\(\n( )*\[(\d*.\d*\,\d*.\d*)/gm;
@@ -71,28 +71,10 @@ export default function ressourceCarte(){
     //affichage des marqueurs (trouver comment reset l'affichage removemap?)
 
     this.affichageMarker=function(tab,map){
+
         for (let t=0;t<tab.length;t++){
-            let markerSelected = L.marker([tab[t].latitude,tab[t].longitude],{icon: tab[t].img}).addTo(map).bindPopup(tab[t].bulle);
+          let markerSelected = L.marker([tab[t].latitude,tab[t].longitude],{icon: tab[t].img}).addTo(map).bindPopup(tab[t].bulle);  
+          console.log(markerSelected);
         }
-    }
-
-
-    // filtres de la carte
-
-    this.filtreCarte=function(data,filtre,tab){
-        //let tab=[]; 
-        for(let d=0;d<data.length;d++){ 
-                  
-            for(let filtreObj in filtre){
-                console.log(filtreObj);
-                console.log(filtre[filtreObj]);
-
-                if(data[d].class==filtreObj && filtre[filtreObj]==true){ 
-                    tab.push(data[d]);    
-                }  
-             }   
-        }
-        console.log(tab);
-        //return tab;
     }
 }

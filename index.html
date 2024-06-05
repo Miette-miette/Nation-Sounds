@@ -22,6 +22,10 @@
         </header>
         
         <nav id="menuInfo">
+
+            <div id="visuelMenu" class="d-flex justify-content-center">
+                <img src="./media/illustration/ns_mascotte.png" alt="mascotte Nation Sound" id="mascotteMenu">
+            </div>
             <ul class="d-flex flex-column">
                 <li>
                     <img src="./media/illustration/etoile.png" width="50px">
@@ -54,19 +58,29 @@
             </ul>
         </nav>
 
-        <main class="d-flex flex-column justify-content-center align-items-center"> 
+        <main class="d-flex flex-column justify-content-center align-items-center" id="mainAccueil"> 
             <article id="bienvenue" class="d-flex flex-column justify-content-center">
                
                 <div id="logoAnim" class="d-flex justify-content-center align-items-center">
-                    <img src="./media/illustration/courone.png" id="couronne">
-                    <h1 id="logoCouronne">Nation<br> Sounds<br> 2024</h1>
+                    <img src="./media/illustration/tartelette_accueil.png" id="tartelette">
+                    <img src="./media/illustration/ns_2024.png" id="ns_2024">
+                    <img src="./media/illustration/ns_mascotte.png" id="mascotte">
+                    <img src="./media/illustration/forme-organique1.png" id="forme1">
+                    <img src="./media/illustration/megaphone.png" id="mega">
+                    <img src="./media/illustration/fleur1.png" id="fleur1">
+                    <img src="./media/illustration/fleur3.png" id="fleur2">
+                    <img src="./media/illustration/cassette.png" id="cassette">
+                    <img src="./media/illustration/etoile.png" id="etoile">
+                    
                 </div>
 
-                 
-                <input type="button" value="Découvrez le programme" class="button-style">
+                 <div class="button-style d-flex justify-content-center" id="btnlanding">
+                    <a href="programme.html">Découvrez le programme</a>
+                 </div>
+        
             </article>
 
-            <article id="affiche">
+            <article id="affiche" class="d-flex flex-column justify-content-center">
                 <h2 class="d-flex align-items-center justify-content-center">Les concerts</h2>
                 <div id="carouselArtiste">
                     <div id="conteneurCarousel" class="d-flex flex-row ">
@@ -76,7 +90,7 @@
                 
             </article>
 
-            <article id="billeterie" >
+            <article id="billeterie" class="d-flex flex-column justify-content-center align-items-center">
                 <h2>Billetterie</h2>
                 <p>Obtenez vos places juste ici!</p>
                 <input type="button" href="https://www.ticketmaster.fr/fr" target="_blank" rel="noreferrer" class="button-style" value="billeterie">

@@ -68,8 +68,5 @@ export default function filtreProgramme(){
             console.log(tab);
             
         }
-    }
-
-
-    
+    }  
 }

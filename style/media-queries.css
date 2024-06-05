@@ -12,12 +12,96 @@
         font-size: 30px;
     }
 
-    #logoCouronne{
-        width: 70%;
+    #menuInfo{
+        display: none;
+        flex-direction: column-reverse;
     }
 
-    #couronne{
+    #mainAccueil{
+        padding: 100px 0;
+    }
+
+    #bienvenue {
+        height: 600px;
+        width: 100%;
+    }
+
+    #mascotte{
+        position: absolute;
+        z-index: 4;
+        width: 100px;
+        top: 15%;
+        left: 13%;
+    }
+    
+    #forme1{
+        position: absolute;
+        z-index: 4;
+        width: 42px;
+        top: 17%;
+        right: 32%;
+    }
+    
+    #mega{
+        position: absolute;
+        z-index: 4;
+        width: 62px;
+        top: 400px;
+        left: 12%;
+    }
+    
+    #cassette {
+        position: absolute;
+        z-index: 4;
+        width: 72px;
+        top: 95px;
+        right: 10%;
+        rotate: -30deg;
+    }
+    
+    #etoile{
+        position: absolute;
+        z-index: 4;
+        width: 30px;
+        top: 460px;
+        left: 25%;
+    }
+    
+    #fleur1 {
+        position: absolute;
+        z-index: 4;
+        width: 70px;
+        top: 175px;
+        right: 12%;
+    }
+    
+    #fleur2 {
+        position: absolute;
+        z-index: 4;
+        width: 50px;
+        top: 400px;
+        right: 12%;
+    }
+    
+    #tartelette{
+        position: absolute;
+        z-index: 2;
+        width: 80%;
+        margin-top: -100px;
+    }
+    
+    #ns_2024{
+        position: absolute;
+        z-index: 3;
+        width: 65%;
+        margin-top: -100px;
+    }
+
+    #btnlanding{
+        z-index: 2;
         width: 60%;
+        margin-left: 20%;
+        margin-top: 0;
     }
 
     .sceneBtn {
@@ -38,6 +122,33 @@
     .concertItem>img{
         margin: 2% 5%;
     }
+
+    #mainProg {
+        display: flex;
+        padding: 100px 5%;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .progBtn {
+        position: fixed;
+        bottom: 0;
+        background-color: beige;
+        width: 100%;
+        padding: 4% 10%;
+        border-top: solid #492E34;
+    }
+
+    #filtreTitre>img{
+        margin-left: 20px;
+    }
+
+    .filtreConteneur {
+        width: 90%;
+    }
+
+
+    
 
     
 }

@@ -14,7 +14,7 @@ main{
 
 h1{
     font-family: "Caprasimo", serif;
-    font-weight: 600;
+    font-weight: 500;
     font-style: normal;
     color: #3f292e;
 }
@@ -36,9 +36,8 @@ p, label{
     font-family: "Afacad", sans-serif;
     font-optical-sizing: auto;
     color: #3f292e;
+    margin-bottom: 2px;
 }
-
-
 
 a{
     color: beige;
@@ -67,13 +66,19 @@ button:hover, .button-style:hover{
 .active{
     background-color:#8f505e;
 }
+
+.voirPlus{
+    width: 30px;
+    rotate: 80deg
+}
+
 /* HEADER */
 
 header{
     padding: 2%;
     position: fixed;
     width: 100%;
-    z-index: 4;
+    z-index: 7;
 }
 
 #logo{
@@ -83,9 +88,11 @@ header{
 
 #menuBtn{
     position: relative;
-    z-index: 4;
+    z-index: 7;
     cursor: pointer;
 }
+
+/*MENU*/
 
 @keyframes menuSlide {
 	0% {
@@ -107,7 +114,7 @@ header{
     height: 100%;
     padding-top: 50px;
     animation: menuSlide 2s ease 0s 1 normal ;
-    z-index: 3;
+    z-index: 6;
 }
 #menuInfo>ul{
     padding-top: 8%;
@@ -118,6 +125,10 @@ header{
     color: beige;
     font-size: 50px;
     list-style: none;
+}
+
+#mascotteMenu{
+    width: 60%;
 }
 
 /*FOOTER*/
@@ -166,13 +177,26 @@ footer>div>div>p{
 
 /*Accueil*/
 
-/*#bienvenue{
-    background-image: url(../media/3941289-uhd_3840_2160_30fps.mp4);
-}*/
-
-#bienvenue>h1{
-    padding-top: 20%;
+#mainAccueil{
+    padding: 5% 0;
 }
+
+#bienvenue {
+    height: 900px;
+    margin-top: -100px;
+    padding-top: 200px;
+    background-image: url(../media/pexels-milodeckert-17842579.png);
+    background-size: cover;
+    background-position: right;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+#logoAnim{
+    
+    height: 400px;
+}
+
 
 @keyframes logoRotation {
     0%{
@@ -183,30 +207,133 @@ footer>div>div>p{
     }
 }
 
-#logoAnim{
-   padding: 10%;
+@keyframes logoShake {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
 }
 
-#couronne{
+
+#mascotte {
+    position: absolute;
+    z-index: 4;
+    width: 12%;
+    top: 142px;
+    left: 23%;
+    animation: logoShake 20s ease-out 0s infinite normal forwards;
+}
+
+#forme1{
+    position: absolute;
+    z-index: 4;
+    width: 5%;
+    top: 150px;
+    right: 32%;
+}
+
+#mega {
+    position: absolute;
+    z-index: 4;
+    width: 8%;
+    left: 18%;
+    top: 460px;
+    animation: logoShake 10s ease-out 0s infinite normal forwards;
+}
+
+#cassette {
+    position: absolute;
+    z-index: 4;
+    width: 8%;
+    top: 95px;
+    right: 15%;
+    rotate: -30deg;
+    animation: logoShake 10s ease-out 0s infinite normal forwards;
+    
+}
+
+#etoile {
+    position: absolute;
+    z-index: 4;
+    width: 5%;
+    top: 580px;
+    left: 28%;
+    animation: logoRotation 20s linear 0s infinite normal forwards;
+}
+
+#fleur1 {
+    position: absolute;
+    z-index: 4;
+    width: 10%;
+    top: 230px;
+    right: 17%;
+    animation: logoRotation  25s linear 0s infinite normal forwards;
+}
+
+#fleur2 {
+    position: absolute;
+    z-index: 4;
+    width: 7%;
+    top: 600px;
+    right: 25%;
+    animation: logoRotation  30s linear 0s infinite normal forwards;
+}
+
+#tartelette{
     position: absolute;
     z-index: 2;
+    width: 35%;
+    animation: logoRotation  35s linear 0s infinite normal forwards;
+
+}
+
+#ns_2024{
+    position: absolute;
+    z-index: 3;
+    width: 28%;
+
+}
+
+#btnlanding{
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    z-index: 2;
+    margin-top: 200px;
     width: 40%;
-    animation: logoRotation 30s linear 0s ;
-    filter: drop-shadow(0 5px #8f505e);
-    
-
+    margin-left: 30%;
 }
 
-#logoCouronne{
-    position: relative;
-    z-index: 1;
-    width: 50%;
 
-}
 
 /*AFFICHE*/
+
 #affiche{
-    padding-top: 30%;
+    padding: 5% 0;
     width: 100%;
     
 }
@@ -248,6 +375,21 @@ footer>div>div>p{
     font-style: larger;
     font-size: 34px;
 }
+
+/*BILLETERIE*/
+
+#billeterie{
+    width: 100%;
+    height: 500px;
+    padding: 5% 0;
+    background-color: #8f505e;
+}
+
+#billeterie>h2{
+    color: beige;
+}
+
+
 
 
 /* CONCERT */
@@ -291,6 +433,14 @@ footer>div>div>p{
 }
 
 /*PROGRAMMATION*/
+
+#mainProg{
+    padding: 5% 10%;
+}
+
+.filtreConteneur {
+    width: 150px;
+}
 
 .progItem{
     background-image: none;
@@ -409,8 +559,49 @@ footer>div>div>p{
 /*CARTE*/
 
 #map{ 
-    height: 600px; 
+    height: 400px; 
     position: relative;
     z-index: 1;
+}
+
+.leaflet-popup-content {
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #3f292e;
+    
+}
+
+/*INFORMATION*/
+
+#retour {
+    margin-bottom: 15px;
+}
+
+#retour>a>img{
+    rotate: 180deg;
+    margin-right: 10px;
+}
+
+#information {
+    background-color: beige;
+    padding: 10px 15px 10px 15px;
+    border-style: solid;
+    border-color: #492E34;
+    border-radius: 15px;
+    margin: 1%;
+}
+#information>div>div{
+    margin-bottom: 10px;
+}
+
+
+.imgInfo>img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 7px;
+    border: solid #492E34;
 }
 

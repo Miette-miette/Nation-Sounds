@@ -73,7 +73,8 @@ export default function CMS(){
     //Fonction pour remplir les templates 
 
     this.replaceTemplate=function(data,template){
-      
+
+      template=template.replace(`%id%`, data.title)
       template=template.replace(`%tags%`, data.tags)
       template=template.replace(`%src%`, data.src);
       template=template.replace(`%title%`, data.title);
@@ -82,7 +83,17 @@ export default function CMS(){
       template=template.replace(`%heure%`, data.heure);
       template=template.replace(`%description%`, data.description);
       return template;
-    }   
+    } 
+    
+    this.progItemFromTitle= function(data,title){
+
+      for (let i=0;i<data.length;i++){
+          if(title==data[i].title){
+              return data[i];
+              console.log(data[i]);
+          }
+      }     
+    }  
 }
  
 
