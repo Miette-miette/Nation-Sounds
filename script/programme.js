@@ -107,3 +107,33 @@ function setup(){
   }
 
 setup();
+
+
+function showFiltre(){
+
+    let progFiltreConteneur=document.getElementById('filtreTitre');
+    console.log(progFiltreConteneur);
+
+    let filtre=document.getElementsByClassName('filtreConteneur');
+    console.log(filtre);
+
+    let imgFleche=document.getElementsByClassName('voirPlus');
+    console.log(imgFleche);
+
+    progFiltreConteneur.addEventListener('click', ()=>{
+        for(let f=0;f<filtre.length;f++){
+       
+            if(filtre[f].style.display==="flex"){
+                filtre[f].style.display="none";
+                imgFleche[0].style.rotate="82deg";
+            }
+            else{
+                filtre[f].style.display="flex";
+                imgFleche[0].style.rotate="265deg";
+            } 
+        }  
+    })
+            
+        
+}
+showFiltre();

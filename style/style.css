@@ -68,8 +68,52 @@ button:hover, .button-style:hover{
 }
 
 .voirPlus{
-    width: 30px;
-    rotate: 80deg
+    width: 20px;
+    height: 30px;
+    rotate: 82deg;
+}
+
+/*ANIMATION CSS*/
+
+@keyframes logoRotation {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes logoShake {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
 }
 
 /* HEADER */
@@ -127,9 +171,27 @@ header{
     list-style: none;
 }
 
-#mascotteMenu{
-    width: 60%;
+/* MENU VISUEL */
+
+#visuelMenu{
+    width: 40%;
 }
+
+#mascotteMenu {
+    width: 10%;
+    position: absolute;
+    margin: 0 0 500px 200px;
+    z-index: 2;
+    animation: logoShake 15s ease-out 0s infinite normal forwards;
+}
+
+#bgMascotteMenu {
+    width: 70%;
+    height: max-content;
+    position: relative;
+    z-index: 1;
+}
+
 
 /*FOOTER*/
 
@@ -174,7 +236,6 @@ footer>div>div>p{
 }
 
 
-
 /*Accueil*/
 
 #mainAccueil{
@@ -196,49 +257,6 @@ footer>div>div>p{
     
     height: 400px;
 }
-
-
-@keyframes logoRotation {
-    0%{
-        transform: rotate(0);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes logoShake {
-	0%,
-	100% {
-		transform: rotate(0deg);
-		transform-origin: 50% 50%;
-	}
-
-	10% {
-		transform: rotate(8deg);
-	}
-
-	20%,
-	40%,
-	60% {
-		transform: rotate(-10deg);
-	}
-
-	30%,
-	50%,
-	70% {
-		transform: rotate(10deg);
-	}
-
-	80% {
-		transform: rotate(-8deg);
-	}
-
-	90% {
-		transform: rotate(8deg);
-	}
-}
-
 
 #mascotte {
     position: absolute;
@@ -394,6 +412,11 @@ footer>div>div>p{
 
 /* CONCERT */
 
+#concertHeader>div>img{
+    margin: 20px;
+    animation: logoRotation  35s linear 0s infinite normal forwards;
+}
+
 .sceneConteneur {
     width: 480px;
     background-color: beige;
@@ -438,7 +461,13 @@ footer>div>div>p{
     padding: 5% 10%;
 }
 
+#progHeader>div>img{
+    margin: 20px;
+    animation: logoRotation  35s linear 0s infinite normal forwards;
+}
+
 .filtreConteneur {
+    display: flex;
     width: 150px;
 }
 
@@ -470,14 +499,17 @@ footer>div>div>p{
     font-size: 34px;
 }
 
-.progTxt,.infoCard{
+.progTxt, .infoCard {
+    width: 100%;
     background: linear-gradient(0deg, rgba(0,0,0,0.6278886554621849) 49%, rgba(255,255,255,0) 100%);
     padding: 20px;
 }
+
 /* FAQ */
 
-#faqHeader>h1{
-    padding: 8%;
+#faqHeader>img{
+    margin: 20px;
+    animation: logoShake 20s ease-out 0s infinite normal forwards;
 }
 
 .faqTopic{
@@ -562,6 +594,9 @@ footer>div>div>p{
     height: 400px; 
     position: relative;
     z-index: 1;
+    border-style: solid;
+    border-color: #492E34;
+    margin: 1%;
 }
 
 .leaflet-popup-content {
@@ -570,6 +605,30 @@ footer>div>div>p{
     font-style: normal;
     color: #3f292e;
     
+}
+
+.carteFood{
+    background-color: beige;
+    padding: 10px 15px 10px 15px;
+    border-style: solid;
+    border-color: #492E34;
+    border-radius: 10px;
+    margin: 1%;
+}
+
+.carteInfoImg{
+    display: flex;
+    width: 300px;
+    height: 300px; 
+    justify-content: center;
+}
+
+.carteInfoImg>img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /*INFORMATION*/

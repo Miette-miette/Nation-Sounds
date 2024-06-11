@@ -7,8 +7,10 @@
         flex-direction: column;
     }
 
+    /*MENU*/
+
     #menuInfo>ul>li {
-        padding-top: 10%;
+        padding-top: 8%;
         font-size: 30px;
     }
 
@@ -16,6 +18,24 @@
         display: none;
         flex-direction: column-reverse;
     }
+
+    #visuelMenu{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 10%;
+    }
+
+    #mascotteMenu {
+        width: 30%;
+        position: absolute;
+        margin: 0 0 200px 180px;
+        z-index: 2;
+        animation: logoShake 15s ease-out 0s infinite normal forwards;
+    }
+
+
+    /*ACCUEIL*/
 
     #mainAccueil{
         padding: 100px 0;
@@ -104,6 +124,8 @@
         margin-top: 0;
     }
 
+    /*CONCERT*/
+
     .sceneBtn {
         position: fixed;
         bottom: 0;
@@ -123,6 +145,8 @@
         margin: 2% 5%;
     }
 
+    /*PROGRAMMATION*/
+
     #mainProg {
         display: flex;
         padding: 100px 5%;
@@ -135,7 +159,7 @@
         bottom: 0;
         background-color: beige;
         width: 100%;
-        padding: 4% 10%;
+        padding: 4% 10% 10% 10%;
         border-top: solid #492E34;
     }
 
@@ -144,6 +168,7 @@
     }
 
     .filtreConteneur {
+        display: none;
         width: 90%;
     }
 

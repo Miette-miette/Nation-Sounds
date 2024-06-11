@@ -62,7 +62,6 @@ export default function CMS(){
         let carteData={};
 
         let content=articleCMS[c].content.rendered;
-        console.log(content);
 
         carteData["content"]=content;
 
@@ -75,7 +74,7 @@ export default function CMS(){
     this.replaceTemplate=function(data,template){
 
       template=template.replace(`%id%`, data.title)
-      template=template.replace(`%tags%`, data.tags)
+      template=template.replace(`%lieu%`, data.lieu)
       template=template.replace(`%src%`, data.src);
       template=template.replace(`%title%`, data.title);
       template=template.replace(`%date%`, data.date);
@@ -90,7 +89,6 @@ export default function CMS(){
       for (let i=0;i<data.length;i++){
           if(title==data[i].title){
               return data[i];
-              console.log(data[i]);
           }
       }     
     }  

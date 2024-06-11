@@ -21,6 +21,12 @@
         </header>
         
         <nav id="menuInfo">
+
+            <div id="visuelMenu" class="d-flex justify-content-center align-items-center">
+                <img src="./media/illustration/happyfleur1.png" alt="mascotte Nation Sound" id="mascotteMenu">
+                <img src="./media/illustration/paysage2.png" alt="paysage" id="bgMascotteMenu">
+            </div>
+            
             <ul class="d-flex flex-column">
                 <li>
                     <img src="./media/illustration/etoile.png" width="50px">
@@ -54,7 +60,7 @@
         </nav>
 
         <main id="mainProg">
-            <div id="progtHeader" class="d-flex flex-column justify-content-center align-items-center">
+            <div id="progHeader" class="d-flex flex-column justify-content-center align-items-center">
                 <div class="d-flex flex-row justify-content-center align-items-center">
                     <img src="./media/illustration/etoile.png" width="80px">
                     <h1>Programmation</h1>
@@ -72,7 +78,7 @@
                     </div>
                     
 
-                    <div class="filtreConteneur d-none d-md-flex flex-column ">
+                    <div class="filtreConteneur flex-column ">
                     <label for="jour">Jours</label>
                         <select id="jour" name="jour" class="button-style">
                             <option>Tous</option>
@@ -82,13 +88,13 @@
                         </select>
                     </div>
 
-                    <div class="filtreConteneur d-none d-md-flex flex-column">
+                    <div class="filtreConteneur flex-column">
                         <label for="heure">Horaires (à partir de)</label>
                         <input type="time" name="heure" id="heure" value="14:00">
                         </input>
                     </div>
 
-                    <div class="filtreConteneur d-none d-md-flex flex-column">
+                    <div class="filtreConteneur flex-column">
                     <label for="lieu">Lieux</label>
                         <select id="lieu" name="lieu" class="button-style">
                             <option>Tous</option>
@@ -101,7 +107,7 @@
                         </select>
                     </div>
 
-                    <div class="filtreConteneur d-none d-md-flex flex-column">
+                    <div class="filtreConteneur flex-column">
                     <label for="type">Type d'evenement</label>
                         <select id="type" name="type" class="button-style">
                             <option>Tous</option>
