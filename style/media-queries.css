@@ -124,6 +124,29 @@
         margin-top: 0;
     }
 
+    #affiche>div {
+        padding: 20px 0 20px 20px;
+        width: 100%;
+    }
+
+    .infoCard {
+        width: 190px;
+    }
+
+    #news {
+        padding: 4%;
+    }
+    .articleImg {
+        height: 210px;
+        width: 250px;
+        padding: 2%;
+    }
+
+    #assoTxt>img {
+        width: 250px;
+        height: 250px;
+    }
+
     /*CONCERT*/
 
     .sceneBtn {
@@ -134,7 +157,9 @@
         height: 80px;
         padding: 2%;
         border-top: solid #492E34;
+        z-index: 2;
     }
+
     .sceneConteneur{
         width: 100%;
         padding: 10px 10px 1px 10px;
@@ -161,6 +186,7 @@
         width: 100%;
         padding: 4% 10% 10% 10%;
         border-top: solid #492E34;
+        z-index: 2;
     }
 
     #filtreTitre>img{

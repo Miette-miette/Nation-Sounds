@@ -122,30 +122,18 @@ function newListMarker(){
 }
 newListMarker();
 
-//ADD EVENT LISTENER POUR LE CHANGEMENT DE LAYER
-
-let btnRadio=document.getElementsByClassName('leaflet-control-layers-selector');
-
-for(let r=0;r<btnRadio.length;r++){
-    btnRadio[r].addEventListener('click',()=>{
-        newListMarker();
-    })
-}
-
 //FONCTION POUR AFFICHER LES INFOS RELATIVES AUX MARQUEURS
 
 function infoLieu(id){
 
     for(let t=0;t<infoCarte.length;t++){
         let todayData= new Date();
-
         if(infoCarte[t].type==id){ //AFFICHAGE DES INFOS SUR LES LIEUX
             let infoItem=cms.replaceTemplate(infoCarte[t],infoFoodTemplate);
             document.getElementById('conteneurInformations').innerHTML=infoItem;
         } 
 
         if(infoCarte[t].type=="concert"||infoCarte[t].type=="atelier"||infoCarte[t].type=="performance"){ //AFFICHAGE DES SPECTACLES EN TEMPS REEL PAR SCENE
-           
             if(infoCarte[t].scene.toLowerCase()==id){
                 if(infoCarte[t].dateF==todayData){
                     let infoItem=cms.replaceTemplate(infoCarte[t],infoConcertTemplate);
@@ -159,6 +147,14 @@ function infoLieu(id){
     } 
 }
 
+//ADD EVENT LISTENER POUR LE CHANGEMENT DE LAYER
 
+let btnRadio=document.getElementsByClassName('leaflet-control-layers-selector');
+
+for(let r=0;r<btnRadio.length;r++){
+    btnRadio[r].addEventListener('click',()=>{
+        newListMarker();
+    })
+}
 
  

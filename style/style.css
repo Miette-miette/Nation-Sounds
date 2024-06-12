@@ -9,7 +9,48 @@ main{
     padding: 5% 20%;
 }
 
+/*ANIMATION CSS*/
 
+@keyframes logoRotation {
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes logoShake {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(8deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(-10deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(10deg);
+	}
+
+	80% {
+		transform: rotate(-8deg);
+	}
+
+	90% {
+		transform: rotate(8deg);
+	}
+}
 /*STYLE DE BASE ET TEXTES */
 
 h1{
@@ -73,47 +114,15 @@ button:hover, .button-style:hover{
     rotate: 82deg;
 }
 
-/*ANIMATION CSS*/
-
-@keyframes logoRotation {
-    0%{
-        transform: rotate(0);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
+.decoTitre{
+    width: 50px;
+    margin: 20px;
+    animation: logoRotation  35s linear 0s infinite normal forwards;
 }
-
-@keyframes logoShake {
-	0%,
-	100% {
-		transform: rotate(0deg);
-		transform-origin: 50% 50%;
-	}
-
-	10% {
-		transform: rotate(8deg);
-	}
-
-	20%,
-	40%,
-	60% {
-		transform: rotate(-10deg);
-	}
-
-	30%,
-	50%,
-	70% {
-		transform: rotate(10deg);
-	}
-
-	80% {
-		transform: rotate(-8deg);
-	}
-
-	90% {
-		transform: rotate(8deg);
-	}
+.decoTitreShake{
+    width: 50px;
+    margin: 20px;
+    animation: logoShake 12s ease-out 0s infinite normal forwards;
 }
 
 /* HEADER */
@@ -128,12 +137,14 @@ header{
 #logo{
     width: 70px;
     height: 70px;
+    filter: drop-shadow(2px 2px 2px #492E34);
 }
 
 #menuBtn{
     position: relative;
     z-index: 7;
     cursor: pointer;
+    filter: drop-shadow(2px 4px 4px #492E34);
 }
 
 /*MENU*/
@@ -148,18 +159,20 @@ header{
 	}
 }
 
-#menuInfo{
+#menuInfo {
     display: none;
     justify-content: center;
-    position: absolute;
+    position: fixed;
     background-color: #492E34;
     color: beige;
     width: 100%;
     height: 100%;
     padding-top: 50px;
-    animation: menuSlide 2s ease 0s 1 normal ;
+    animation: menuSlide 2s ease 0s 1 normal;
     z-index: 6;
+    top: 0;
 }
+
 #menuInfo>ul{
     padding-top: 8%;
 }
@@ -203,6 +216,7 @@ footer {
     height: 600px;
     padding: 10% 0 10% 0;
     color: beige;
+    filter: drop-shadow(2px 4px 4px #492E34);
 }
 
 #topFooter{
@@ -236,7 +250,7 @@ footer>div>div>p{
 }
 
 
-/*Accueil*/
+/*ACCUEIL*/
 
 #mainAccueil{
     padding: 5% 0;
@@ -251,6 +265,7 @@ footer>div>div>p{
     background-position: right;
     width: 100%;
     padding-bottom: 20px;
+    filter: drop-shadow(2px 4px 4px #492E34);
 }
 
 #logoAnim{
@@ -344,30 +359,28 @@ footer>div>div>p{
     margin-top: 200px;
     width: 40%;
     margin-left: 30%;
+    filter: drop-shadow(2px 4px 4px #492E34);
 }
 
-
-
-/*AFFICHE*/
-
+/*ACCUEIL AFFICHE*/
 #affiche{
-    padding: 5% 0;
     width: 100%;
-    
 }
 
-#conteneurCarousel{
-    
+#affiche>div{
+    padding: 20px 20% 20px 20%;
+    width: 100%; 
+}
+
+#conteneurCarousel{ 
     overflow-x:scroll;
-    scroll-behavior: smooth;
-    
+    scroll-behavior: smooth; 
 }
 
 .carouselCard{
     background-image: none;
     background-size: cover;
     background-position: center;
-    width: 300px;
     height: 320px;
     justify-content: end;
     background-color:#8f505e;
@@ -375,10 +388,13 @@ footer>div>div>p{
     border-color: #492E34;
     margin: 5px;
     border-radius: 8px;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 }
 
-.infoCard{
-    width: 230px;
+.infoCard {
+    width: 300px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.6278886554621849) 49%, rgba(255,255,255,0) 100%);
+    padding: 20px;
 }
 
 .infoCard>h3,.infoCard>p{
@@ -394,11 +410,10 @@ footer>div>div>p{
     font-size: 34px;
 }
 
-/*BILLETERIE*/
+/*ACCUEIL BILLETERIE*/
 
 #billeterie{
     width: 100%;
-    height: 500px;
     padding: 5% 0;
     background-color: #8f505e;
 }
@@ -407,8 +422,92 @@ footer>div>div>p{
     color: beige;
 }
 
+.pass {
+    background-image: url(../media/illustration/tartelette_accueil.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+    margin: 5% 5%;
+    filter: drop-shadow(2px 4px 4px #3f2128);
+}
 
+/*ACCUEIL ARTICLE ACTU*/
 
+#news {
+    background-color: #E47161;
+    width: 100%;
+    padding: 20px 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    filter: drop-shadow(2px 4px 4px #492E34);
+}
+
+#news>h2{
+    display: flex;
+    justify-content: center;
+}
+
+.articleCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 400px;
+    background-color:beige;
+    border-style: solid;
+    border-color: #492E34;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 8px;
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    cursor: pointer;
+    filter: drop-shadow(2px 4px 4px #492E34);
+}
+
+.articleImg{   
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.articleImg>img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.articleDescription{
+    padding: 3%;
+}
+
+#articleConteneur{ 
+    overflow-x:scroll;
+    scroll-behavior: smooth; 
+}
+
+/*ACCUEIL HUMANITAIRE */
+
+#asso{
+    width: 100%;
+    padding: 20px 20%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#assoTxt>img{
+    border-radius: 100%;
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    margin-right: 5% ;
+}
 
 /* CONCERT */
 
@@ -425,6 +524,7 @@ footer>div>div>p{
     border-color: #492E34;
     border-radius: 15px;
     margin: 1%;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 }
 
 .concertItem{
@@ -484,6 +584,7 @@ footer>div>div>p{
     margin: 1%;
     border-radius: 8px;
     cursor: pointer;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 }
 
 .progItem>div>h3,.progItem>div>p{
@@ -499,7 +600,7 @@ footer>div>div>p{
     font-size: 34px;
 }
 
-.progTxt, .infoCard {
+.progTxt{
     width: 100%;
     background: linear-gradient(0deg, rgba(0,0,0,0.6278886554621849) 49%, rgba(255,255,255,0) 100%);
     padding: 20px;
@@ -526,6 +627,7 @@ footer>div>div>p{
     border-radius: 15px;
     margin: 1% 0;
     cursor: pointer;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 }
 
 .inputForm {
@@ -554,6 +656,7 @@ footer>div>div>p{
     border-color: #492E34;
     border-radius: 50px;
     margin: 1%;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 
 }
 
@@ -569,6 +672,7 @@ footer>div>div>p{
     padding: 2%;
     margin: 1%;
     border-radius: 8px;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
     
 }
 
@@ -614,18 +718,18 @@ footer>div>div>p{
     border-color: #492E34;
     border-radius: 10px;
     margin: 1%;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 }
 
 .carteInfoImg{
     display: flex;
-    width: 300px;
-    height: 300px; 
+    width: 50%; 
     justify-content: center;
 }
 
 .carteInfoImg>img {
-    width: 100%;
-    height: 100%;
+    width: 300px;
+    height: 300px;
     border-radius: 100%;
     object-fit: cover;
     object-position: center;
@@ -649,6 +753,7 @@ footer>div>div>p{
     border-color: #492E34;
     border-radius: 15px;
     margin: 1%;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 }
 #information>div>div{
     margin-bottom: 10px;
