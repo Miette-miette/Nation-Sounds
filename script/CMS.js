@@ -84,15 +84,32 @@ export default function CMS(){
       template=template.replace(`%description%`, data.description);
       return template;
     } 
+
+    //Foction pour recuperer les data à partir du titre
     
     this.progItemFromTitle= function(data,title){
 
       for (let i=0;i<data.length;i++){
           if(title==data[i].title){
+            console.log(data[i]);
               return data[i];
           }
       }     
     }  
+
+    //Fonction pour generer la page informations
+
+    this.pageInformation=function(classItem,data){
+      let cardItem=document.getElementsByClassName(classItem);
+
+      for (let i=0;i<cardItem.length;i++){
+        cardItem[i].addEventListener('click',()=>{
+          console.log("click");
+            localStorage.setItem('infoItem', JSON.stringify(this.progItemFromTitle(data,cardItem[i].id)))
+            window.open('./information.html','_self');
+        })
+      }
+    }
 }
  
 

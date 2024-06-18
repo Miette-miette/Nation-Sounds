@@ -56,7 +56,7 @@ for (let a=0;a<dataArticle.length;a++){
     all.push(dataArticle[a]);   
 }
 affichageItem(all);
-storageData();
+cms.pageInformation("progItem",dataArticle);
 
 //Fonction FILTRAGE 
 
@@ -64,9 +64,11 @@ function filtrageItem(data,progFiltre){
     let progTab=[];
     
     filtre.filtreAll(data,progFiltre,progTab)
-    console.log(progTab);
+    
     affichageItem(progTab);
-    storageData();
+    cms.pageInformation("progItem",data);
+    console.log(progTab);
+    
 }
 
 //RECUPERER LES DONNEES DES INPUTS

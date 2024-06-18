@@ -7,10 +7,18 @@
         flex-direction: column;
     }
 
+    h1 {
+        font-size: 1.5rem;
+    }
+
     /*MENU*/
 
+    #menuInfo>ul{
+        padding: 30% 0 0 10%;
+    }
+
     #menuInfo>ul>li {
-        padding-top: 8%;
+        padding-top: 3%;
         font-size: 30px;
     }
 
@@ -34,11 +42,65 @@
         animation: logoShake 15s ease-out 0s infinite normal forwards;
     }
 
+    /*FOOTER*/
+
+    footer {
+        height: 1000px;
+        padding: 0 0 20% 0;
+    }
+
+    #topFooter {
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 10%;
+    }
+
+    #logoFooter>img {
+        margin: 10%;
+        width: 110px;
+        height: 110px;
+    }
+
+    #logoFooter>div>p:first-of-type {
+        font-size: 25px;
+    }
+
+    #footerFleur{
+        margin-top: 5%;
+    }
+
+    #footerFleur>img {
+        width: 60px;
+    }
+
+    footer>div>div>p {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #rsFooter>div {
+        width: 80%;
+        justify-content: center;
+    }
+
+    #informationFooter {
+        width: 100%;
+    }
+
+    #informationFooter>a {
+        margin: 0 5%;
+        font-size: 12px;
+    }
+
+    #bottomFooter{
+        width: 100%;
+        margin-bottom: 2%;
+    }
 
     /*ACCUEIL*/
 
     #mainAccueil{
-        padding: 100px 0;
+        padding: 100px 0 0 0;
     }
 
     #bienvenue {
@@ -106,27 +168,44 @@
     #tartelette{
         position: absolute;
         z-index: 2;
-        width: 80%;
-        margin-top: -100px;
+        width: 60%;
+        margin-top: 0px;
     }
     
     #ns_2024{
         position: absolute;
         z-index: 3;
-        width: 65%;
-        margin-top: -100px;
+        width: 48%;
+        margin-top: 0px;
     }
 
-    #btnlanding{
-        z-index: 2;
-        width: 60%;
-        margin-left: 20%;
-        margin-top: 0;
+    #btnlanding {
+        font-size: 20px;
+        margin-top: 200px;
+        width: 40%;
+        padding: 2%;
+        margin-left: 32%;
     }
 
-    #affiche>div {
-        padding: 20px 0 20px 20px;
+    #affiche {
         width: 100%;
+        padding: 20px 0;
+    }
+
+    #affiche>p {
+        padding: 0 4%;
+        text-align: center;
+    }
+
+    #carouselArtiste{
+        padding: 20px 0 0px 20px;
+        width: 100%;
+    }
+
+
+    .pass {
+        width: 210px;
+        height: 220px;
     }
 
     .infoCard {
@@ -134,17 +213,27 @@
     }
 
     #news {
-        padding: 4%;
+        padding: 4% 0 4% 4%;
     }
+    
     .articleImg {
         height: 210px;
         width: 250px;
         padding: 2%;
     }
 
+    #asso {
+        padding: 20px 8%;
+    }
+
     #assoTxt>img {
         width: 250px;
         height: 250px;
+        margin-bottom: 20px;
+    }
+
+    #assoTxt>div>p{
+        padding: 4% 0;
     }
 
     /*CONCERT*/
@@ -198,8 +287,57 @@
         width: 90%;
     }
 
+    .conteneurQuestion {
+        padding: 10px 25px 10px 25px;
+    }
+
 
     
 
     
+}
+
+@media (max-width: 450px) {
+
+    #menuInfo>ul{
+        padding: 10% 0 0 10%;
+    }
+
+    #menuInfo>ul>li {
+        padding-top: 8%;
+        font-size: 30px;
+    }
+
+    footer {
+        height: 800px;
+        padding: 0 0 20% 0;
+    }
+
+    #topFooter {
+        width: 90%;
+        margin-right: 0;
+        margin-bottom: 10%;
+    }
+    #tartelette {
+        width: 80%;
+        margin-top: -90px;
+    }
+    #ns_2024 {
+        width: 65%;
+        margin-top: -90px;
+    }
+    
+    #btnlanding {
+        width: 70%;
+        margin-left: 15%;
+        margin-top: 0;
+        font-size: 16px;
+        padding: 3%;
+    }
+
+    #fleurbtn {
+        width: 80px;
+        margin-left: 70%;
+        margin-top: 62%;
+    }
 }

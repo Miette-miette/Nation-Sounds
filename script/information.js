@@ -6,7 +6,7 @@ let cms= new CMS();
 let infoTemplate= await fetchRessource("./templates/informationTemplate.html"); //Template de la page info
 console.log(infoTemplate);
 
-let data=JSON.parse(localStorage.getItem('progItem'));
+let data=JSON.parse(localStorage.getItem('infoItem'));
 console.log(data);
 
 document.getElementById('information').innerHTML=cms.replaceTemplate(data,infoTemplate);

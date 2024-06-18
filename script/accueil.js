@@ -6,7 +6,7 @@ let cms= new CMS();
 
 //RESSOURCES
 
-let concertCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=18&per_page=60");// Articles programmation de Nation Sounds WP 
+let concertCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=19&per_page=60");// Articles programmation de Nation Sounds WP 
 
 let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=29");//Articles actu
 
@@ -36,24 +36,25 @@ function affichageCarousel(tab,template,idConteneur){
 
 //CAROUSEL ARTISTES
 
-let artistes=[];
+let concert=[];
 
 for (let c=0;c<dataConcert.length;c++){
-    if(dataConcert[c].type=="concert"){
-        artistes.push(dataConcert[c]);      
-    }     
+    concert.push(dataConcert[c]);
 }
-console.log(artistes);  
-affichageCarousel(artistes.slice(-7),artisteTemplate,'conteneurCarousel');
+ 
+affichageCarousel(dataConcert.slice(-7),artisteTemplate,'conteneurCarousel');
 
 //ARTICLES FESTIVAL
-
 let article=[];
 
-for(let a=0;a<dataArticle.length;a++){
+for (let a=0;a<dataArticle.length;a++){
     article.push(dataArticle[a]);
 }
-affichageCarousel(article,articleTemplate,'articleConteneur');
+
+affichageCarousel(dataArticle,articleTemplate,'articleConteneur');
+
+cms.pageInformation("carouselCard",concert);
+cms.pageInformation("articleCard",article);
 
 
 

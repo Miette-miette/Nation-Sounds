@@ -7,6 +7,10 @@ body{
 
 main{
     padding: 5% 20%;
+    background-image: url(../media/fondhead.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 /*ANIMATION CSS*/
@@ -57,24 +61,29 @@ h1{
     font-family: "Caprasimo", serif;
     font-weight: 500;
     font-style: normal;
+    text-align: center;
     color: #3f292e;
+    font-size: 2.5rem;
 }
 
 h2{
     font-family: "Caprasimo", serif;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
     color: #3f292e;
 }
 
 h3{
     font-family: "Afacad", sans-serif;
     font-optical-sizing: auto;
+    text-align: center;
     color: #3f292e;
 }
 
 p, label{
     font-family: "Afacad", sans-serif;
+    font-size: 18px;
     font-optical-sizing: auto;
     color: #3f292e;
     margin-bottom: 2px;
@@ -109,8 +118,8 @@ button:hover, .button-style:hover{
 }
 
 .voirPlus{
-    width: 20px;
-    height: 30px;
+    width: 15px;
+    height: 25px;
     rotate: 82deg;
 }
 
@@ -214,7 +223,7 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
-    padding: 10% 0 10% 0;
+    padding: 10% 0 3% 0;
     color: beige;
     filter: drop-shadow(2px 4px 4px #492E34);
 }
@@ -224,29 +233,47 @@ footer {
     margin-right: 100px;
 }
 
-#logoFooter{
-    margin: 2% 0 2% 5%;
+#logoFooter {
+    margin: 2% 8% 2% 0%;
 }
 
 #logoFooter>img{
     margin: 10%;
+    width: 150px;
+    height: 150px;
+    filter: drop-shadow(2px 2px 2px rgb(63, 46, 23));
 }
 
-#logoFooter>div>p{
+#logoFooter>div>p:first-of-type {
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
     color: beige;
+    font-size: 30px;
 }
 
 footer>div>div>p{
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
     color: beige;
+    font-size: 25px;
 }
 
-#rsFooter{
-    margin: 2% 0 3% 0;
+#footerFleur>img{
+    width: 120px;
 }
 
 .footerRS{
     width: 50px;
-    margin: 5px;
+    margin: 10px;
+}
+
+
+#informationFooter{
+    width: 600px;
+}
+
+#informationFooter>a{
+    margin: 0 5%;
 }
 
 
@@ -352,14 +379,27 @@ footer>div>div>p{
 
 }
 
-#btnlanding{
+#btnlanding {
     font-family: "Caprasimo", serif;
     font-weight: 400;
+    font-size: 25px;
     z-index: 2;
+    border: solid 2px;
+    border-color: #492E34;
     margin-top: 200px;
-    width: 40%;
-    margin-left: 30%;
+    width: 25%;
+    padding: 1%;
+    margin-left: 38%;
     filter: drop-shadow(2px 4px 4px #492E34);
+}
+
+#fleurbtn {
+    position: absolute;
+    z-index: 3;
+    width: 100px;
+    margin-left: 60%;
+    margin-top: 25%;
+    animation: logoShake 12s ease-out 0s infinite normal forwards;
 }
 
 /*ACCUEIL AFFICHE*/
@@ -367,7 +407,7 @@ footer>div>div>p{
     width: 100%;
 }
 
-#affiche>div{
+#carouselArtiste{
     padding: 20px 20% 20px 20%;
     width: 100%; 
 }
@@ -389,6 +429,8 @@ footer>div>div>p{
     margin: 5px;
     border-radius: 8px;
     filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
+    cursor: pointer;
+    
 }
 
 .infoCard {
@@ -412,13 +454,13 @@ footer>div>div>p{
 
 /*ACCUEIL BILLETERIE*/
 
-#billeterie{
+#billeterie {
     width: 100%;
-    padding: 5% 0;
+    padding: 2% 0 4%;
     background-color: #8f505e;
 }
 
-#billeterie>h2{
+#billeterie>div>h2 , #billeterie>p {
     color: beige;
 }
 
@@ -428,13 +470,15 @@ footer>div>div>p{
     background-size: contain;
     background-repeat: no-repeat;
     width: 300px;
-    height: 200px;
+    height: 260px;
     justify-content: center;
     align-items: center;
-    margin: 5% 5%;
+    margin: 2% 2%;
     filter: drop-shadow(2px 4px 4px #3f2128);
 }
-
+.pass>h3{
+    font-family: "Caprasimo", serif;
+}
 /*ACCUEIL ARTICLE ACTU*/
 
 #news {
@@ -557,7 +601,7 @@ footer>div>div>p{
 
 /*PROGRAMMATION*/
 
-#mainProg{
+#mainProg {
     padding: 5% 10%;
 }
 
@@ -569,6 +613,11 @@ footer>div>div>p{
 .filtreConteneur {
     display: flex;
     width: 150px;
+}
+
+.progBtn{
+    margin-top: 2%;
+    width: 800px;
 }
 
 .progItem{
@@ -593,11 +642,13 @@ footer>div>div>p{
     font-family: "Afacad", sans-serif;
     font-optical-sizing: auto;
 }
-.progItem>div>h3{
+
+.progItem>div>h3 {
     font-family: "Caprasimo", serif;
     font-weight: 400;
     font-style: larger;
     font-size: 34px;
+    text-align: left;
 }
 
 .progTxt{
@@ -621,7 +672,7 @@ footer>div>div>p{
 }
 .conteneurQuestion {
     background-color: beige;
-    padding: 10px 25px 1px 25px;
+    padding: 10px 25px 10px 25px;
     border-style: solid;
     border-color: #492E34;
     border-radius: 15px;
@@ -651,13 +702,13 @@ footer>div>div>p{
 
 .conteneurRS {
     background-color: beige;
+    width: 300px;
     padding: 25px;
     border-style: solid;
     border-color: #492E34;
-    border-radius: 50px;
+    border-radius: 10px;
     margin: 1%;
     filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
-
 }
 
 /*PARTENAIRE*/
@@ -738,7 +789,7 @@ footer>div>div>p{
 /*INFORMATION*/
 
 #retour {
-    margin-bottom: 15px;
+    margin: 35px 20px;
 }
 
 #retour>a>img{

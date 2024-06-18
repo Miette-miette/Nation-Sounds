@@ -22,15 +22,15 @@ let tabScenes=["Euphorie","Fusion","Reverie","Resonance","Prisme"];
 
 let jour=[
     {
-        date:new Date(2024, 0o6, 26),
+        date:"Vendredi 26 juillet",
         idJour:"vendredi"
     },
     {
-        date:new Date(2024, 0o6, 27),
+        date:"Samedi 27 juillet",
         idJour:"samedi"
     },
     {
-        date:new Date(2024, 0o6, 28),
+        date:"Dimanche 28 juillet",
         idJour:"dimanche"
     },
     ];

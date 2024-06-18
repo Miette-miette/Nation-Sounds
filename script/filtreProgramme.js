@@ -3,7 +3,7 @@ export default function filtreProgramme(){
     // Filtrage par jour et tri par scene (A-Z)
     this.filtreJour=function(data,jour,tabJour){
         for (let d=0;d<data.length;d++){
-            if (data[d].dateF==jour){   
+            if (data[d].date==jour){   
                 tabJour.push(data[d]);
                 tabJour.sort((a,b)=>(a.scene>b.scene)?1:-1)//trier par scene      
             }   
@@ -55,6 +55,7 @@ export default function filtreProgramme(){
             let jourRegex=/(^\w+)/gm;
 
             let jourSelected=data[a].date.match(jourRegex);//Recuperer seulement le jour sur l'element date de data 
+            console.log(jourSelected);
 
             if((jourSelected[0]==filtre.jour|| filtre.jour=="Tous")&&(data[a].heureF>=filtre.heure) ){ //FILTRAGE PAR DONNEES TEMPORELLES
 
