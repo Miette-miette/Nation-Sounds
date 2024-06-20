@@ -9,6 +9,7 @@ let cms= new CMS();
 let concertCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=19&per_page=60");// Articles programmation de Nation Sounds WP 
 
 let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=29");//Articles actu
+console.log(articleCMS);
 
 //FORMATAGE 
 

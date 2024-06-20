@@ -19,13 +19,16 @@ export default function CMS(){
   this.formateur=function(articleCMS){
       const captureP= /^<p\s+([a-z]+="[A-z]+")*\s*>(.*)<\/p>$/mg; //Capture des paragraphe des articles
       const captureJPG= /src="(.*\.jpg)"/mg;// Capture de l'image
+      const captureDivArticle=/<div\s+(.*=".*")>(.*)\n(<p>(.*\n*)*?)<\/div>/gm;
       let dataGlobale=[];
       
       
       for(let m=0;m<articleCMS.length;m++){
 
+          console.log(articleCMS[m]);
           let matches=articleCMS[m].content.rendered.matchAll(captureP);
           let dataConcert={};
+
       
           let img=articleCMS[m].content.rendered.match(captureJPG);
           img=img[0].split('"')[1];
@@ -34,10 +37,14 @@ export default function CMS(){
 
           let tag=articleCMS[m].tags;
 
+          let article=articleCMS[m].content.rendered.match(captureDivArticle);
+
       
           dataConcert["src"]=img;
           dataConcert["title"]=title;
           dataConcert["tags"]=tag;
+          dataConcert["corps"]=article;
+          
           
       
           for (const match of matches) { //Récupération des classes de l'article pour creer les objets
@@ -82,6 +89,7 @@ export default function CMS(){
       template=template.replace(`%heure%`, data.heure);
       template=template.replace(`%chapeau%`, data.chapeau)
       template=template.replace(`%description%`, data.description);
+      template=template.replace(`%article%`, data.corps);
       return template;
     } 
 

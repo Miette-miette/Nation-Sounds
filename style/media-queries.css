@@ -276,6 +276,8 @@
         padding: 4% 10% 10% 10%;
         border-top: solid #492E34;
         z-index: 2;
+        border-radius: 0;
+        margin: 0;
     }
 
     #filtreTitre>img{
@@ -292,6 +294,14 @@
     }
 
 
+    #fleurInfo {
+        width: 100px;
+    }
+
+    .imgInfo>img {
+        width: 100%;
+        height: 500px;
+    }
     
 
     
@@ -339,5 +349,24 @@
         width: 80px;
         margin-left: 70%;
         margin-top: 62%;
+    }
+
+    .carteInfoImg>img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .infoTxt {
+        padding: 8% 2%;
+    }
+
+    .imgInfo>img {
+        width: 100%;
+        height: 250px;
+    }
+
+    #fleurInfo {
+        width: 80px;
+        top: -60px;
     }
 }

@@ -135,7 +135,10 @@ function infoLieu(id){
 
         if(infoCarte[t].type=="concert"||infoCarte[t].type=="atelier"||infoCarte[t].type=="performance"){ //AFFICHAGE DES SPECTACLES EN TEMPS REEL PAR SCENE
             if(infoCarte[t].scene.toLowerCase()==id){
-                if(infoCarte[t].dateF==todayData){
+                console.log(infoCarte[t].dateF);
+                console.log(todayData);
+                if(infoCarte[t].dateF>=todayData){
+                    
                     let infoItem=cms.replaceTemplate(infoCarte[t],infoConcertTemplate);
                     document.getElementById('conteneurInformations').innerHTML=infoItem;
                 }

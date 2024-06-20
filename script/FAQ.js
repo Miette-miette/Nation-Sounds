@@ -4,6 +4,9 @@ console.log(question);
 let reponse=document.getElementsByClassName("reponse");
 console.log(reponse);
 
+let imgFleche=document.getElementsByClassName('voirPlus');
+console.log(imgFleche);
+
 function showQuestion(){
 
 for(let f=0;f<question.length;f++){
@@ -13,10 +16,12 @@ for(let f=0;f<question.length;f++){
 
            if(reponse[f].style.display==="flex"){
                 reponse[f].style.display="none";
+                imgFleche[f].style.rotate="82deg";
                 console.log(reponse);
             }
             else{
-                reponse[f].style.display="flex";  
+                reponse[f].style.display="flex";
+                imgFleche[f].style.rotate="265deg";  
                 console.log(reponse);
             } 
         })

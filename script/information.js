@@ -3,10 +3,18 @@ import fetchRessource from './fetchressource.js';
 
 let cms= new CMS(); 
 
-let infoTemplate= await fetchRessource("./templates/informationTemplate.html"); //Template de la page info
+let infoTemplate= await fetchRessource("./templates/informationTemplate.html"); //Template pour la programmation
 console.log(infoTemplate);
+
+let articleTemplate= await fetchRessource("./templates/articleTemplate.html"); //Template pour les articles
 
 let data=JSON.parse(localStorage.getItem('infoItem'));
 console.log(data);
 
-document.getElementById('information').innerHTML=cms.replaceTemplate(data,infoTemplate);
+console.log(data.chapeau);
+if(!data.chapeau){
+    document.getElementById('information').innerHTML=cms.replaceTemplate(data,infoTemplate);
+}
+else{
+    document.getElementById('information').innerHTML=cms.replaceTemplate(data,articleTemplate);
+}
