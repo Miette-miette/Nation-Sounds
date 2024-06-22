@@ -6,7 +6,11 @@ let cms= new CMS();
 
 //RESSOURCES
 
-let concertCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=19&per_page=60");// Articles programmation de Nation Sounds WP 
+let hostArticle="https://nation-sound-wp.000webhostapp.com/category/article";
+let localArticle="http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=19&per_page=60";
+
+
+let concertCMS= await cms.dataCMS(hostArticle);// Articles programmation de Nation Sounds WP 
 
 let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=29");//Articles actu
 console.log(articleCMS);
