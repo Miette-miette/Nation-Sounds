@@ -1,5 +1,5 @@
-import CMS from '/CMS.js';
-import fetchRessource from '/fetchressource.js';
+import CMS from './CMS.js';
+import fetchRessource from './fetchressource.js';
 
 let cms= new CMS(); 
 
