@@ -1,5 +1,5 @@
-import CMS from 'Nation-Sound/script/CMS.js';
-import fetchRessource from 'Nation-Sound/script/fetchressource.js';
+import CMS from '/CMS.js';
+import fetchRessource from '/fetchressource.js';
 
 let cms= new CMS(); 
 
