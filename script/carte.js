@@ -8,10 +8,10 @@ let ressource= new ressourceCarte;
 
 //CATEGORIE CARTE ID=26
 
-let carteCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=26");// Carte de Nation Sounds WP 
+let carteCMS= await cms.dataCMS("https://nation-sound-wp.000webhostapp.com/wp-json/wp/v2/posts?categories=26");// Carte de Nation Sounds WP 
 console.log(carteCMS);
 
-let infoCarte= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=28+18&per_page=40");//Informations des lieux et des scènes
+let infoCarte= await cms.dataCMS("https://nation-sound-wp.000webhostapp.com/wp-json/wp/v2/posts?categories=28+18&per_page=40");//Informations des lieux et des scènes
 infoCarte=cms.formateur(infoCarte);
 console.log(infoCarte);
 
