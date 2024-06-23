@@ -1,6 +1,6 @@
 import CMS from './CMS.js';
 import ressourceCarte from './ressourcesCarte.js';
-import fetchRessource from './fetchressource.js';
+import fetchRessource from './fetchRessource.js';
 
 let cms= new CMS(); 
 

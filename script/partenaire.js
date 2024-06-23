@@ -1,6 +1,6 @@
 import CMS from './CMS.js';
 import filtreProgramme from './filtreProgramme.js';
-import fetchRessource from './fetchressource.js';
+import fetchRessource from './fetchRessource.js';
 
 let cms= new CMS(); 
 
