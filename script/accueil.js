@@ -1,18 +1,20 @@
-import CMS from './CMS.js';
-import filtreProgramme from './filtreProgramme.js';
-import fetchRessource from './fetchressource.js';
+import CMS from '/CMS.js';
+import fetchRessource from '/fetchressource.js';
 
 let cms= new CMS(); 
 
 //RESSOURCES
 
-let hostArticle="https://nation-sound-wp.000webhostapp.com/category/article";
-let localArticle="http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=19&per_page=60";
+let hostArticle="https://nation-sound-wp.000webhostapp.com/wp-json/wp/v2/posts?categories=29";
+let localArticle="http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=29";
+
+let hostConcert="https://nation-sound-wp.000webhostapp.com/wp-json/wp/v2/posts?categories=19&per_page=60";
+let localConcert="http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=19&per_page=60";
 
 
-let concertCMS= await cms.dataCMS(hostArticle);// Articles programmation de Nation Sounds WP 
+let concertCMS= await cms.dataCMS(hostConcert);// Articles programmation de Nation Sounds WP 
 
-let articleCMS= await cms.dataCMS("http://localhost/nation-sounds/wp-json/wp/v2/posts?categories=29");//Articles actu
+let articleCMS= await cms.dataCMS(hostArticle);//Articles actu
 console.log(articleCMS);
 
 //FORMATAGE 
@@ -25,9 +27,9 @@ console.log(dataArticle);
 
 //TEMPLATES
 
-let artisteTemplate= await fetchRessource("./templates/carouselCard.html"); //Template du carousel artiste
+let artisteTemplate= await fetchRessource("/templates/carouselCard.html"); //Template du carousel artiste
 
-let articleTemplate= await fetchRessource("./templates/articleCard.html"); 
+let articleTemplate= await fetchRessource("/templates/articleCard.html"); 
 
 //AFFICHAGE
 
