@@ -11,7 +11,7 @@ let ressource= new ressourceCarte;
 let carteCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=6");// Carte de Nation Sounds WP 
 console.log(carteCMS);
 
-let infoCarte= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=28+18&per_page=10");//Informations des lieux et des scènes
+let infoCarte= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=10+14&per_page=20");//Informations des lieux et des scènes
 infoCarte=cms.formateur(infoCarte);
 console.log(infoCarte);
 
@@ -111,6 +111,7 @@ console.log(listMarkerMap);
 function newListMarker(){
     for(let l=0;l<listMarkerMap.length;l++){
         let nameId=listMarkerMap[l].src.match(markerIdRegex);
+        console.log(nameId);
         nameId=nameId[0].split('/');
         nameId=nameId[1].split('.')[0];
         listMarkerMap[l].id=nameId;
