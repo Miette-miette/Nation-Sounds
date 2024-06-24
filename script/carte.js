@@ -103,7 +103,7 @@ let layerControl=L.control.layers(markerFiltre).addTo(map);
 
 //RECUPERATION DES INFORMATIONS SUPPLEMENTAIRES
 
-let markerIdRegex=/05\/(.*).png/gm;
+let markerIdRegex=/06\/(.*).png/gm;
 
 let listMarkerMap= document.getElementsByClassName('leaflet-marker-icon');
 console.log(listMarkerMap);
