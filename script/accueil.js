@@ -5,8 +5,8 @@ let cms= new CMS();
 
 //RESSOURCES
 
-let hostArticle="https://nation-sound-wp.000webhostapp.com/wp-json/wp/v2/posts?categories=29";
-let hostConcert="https://nation-sound-wp.000webhostapp.com/wp-json/wp/v2/posts?categories=19&per_page=60";
+let hostArticle="https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=29";
+let hostConcert="https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=19&per_page=60";
 
 
 

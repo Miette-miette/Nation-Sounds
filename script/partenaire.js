@@ -8,7 +8,7 @@ let filtre= new filtreProgramme;
 
 //CATEGORIE PARTENAIRE ID=27
 
-let articleCMS= await cms.dataCMS("hhttps://nation-sound-wp.000webhostapp.com/wp-json/wp/v2/posts?categories=27&per_page=60");// Articles partenaires de Nation Sounds WP 
+let articleCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=27&per_page=60");// Articles partenaires de Nation Sounds WP 
 console.log(articleCMS);
 
 let dataPartenaire= cms.formateur(articleCMS);//données formatées
