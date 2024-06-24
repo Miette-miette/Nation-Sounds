@@ -4,14 +4,14 @@ import fetchRessource from './fetchRessource.js';
 
 let cms= new CMS(); 
 
-let ressource= new ressourceCarte;
+let ressource= new ressourceCarte();
 
 //CATEGORIE CARTE ID=6
 
 let carteCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=6");// Carte de Nation Sounds WP 
 console.log(carteCMS);
 
-let infoCarte= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=10+14&per_page=20");//Informations des lieux et des scènes
+let infoCarte= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=10+14&per_page=80");//Informations des lieux et des scènes
 infoCarte=cms.formateur(infoCarte);
 console.log(infoCarte);
 
