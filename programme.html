@@ -70,54 +70,61 @@
                 <p>Retrouvez la programmation complete de Nation Sounds Festival!</p>
                 
 
-                <div class="progBtn d-flex flex-column flex-md-row flex-md-wrap justify-content-center justify-content-md-between align-items-center">
+                <div class="progBtn d-flex flex-column">
                     
-                    <div id="filtreTitre" class="d-flex flex-row">
+                    <div id="filtreTitre" class="d-flex flex-row justify-content-center">
                         <h2>Filtres</h2>
                         <img src="./media/icons/suivant.png" class="voirPlus d-flex d-md-none">
                     </div>
                     
 
-                    <div id="filtreBtn">
-                        <div class="filtreConteneur flex-column ">
-                        <label for="jour">Jours</label>
-                            <select id="jour" name="jour" class="button-style">
-                                <option>Tous</option>
-                                <option value="Vendredi">Vendredi 26/07</option>
-                                <option value="Samedi">Samedi 27/07</option>
-                                <option value="Dimanche">Dimanche 28/07</option>
-                            </select>
+                    <div id="filtreBtn" class="d-flex flex-column flex-md-row flex-md-wrap justify-content-center justify-content-md-around align-items-center"">
+
+                        <div id="filtreTemporel" class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="filtreConteneur flex-column ">
+                            <label for="jour">Jour</label>
+                                <select id="jour" name="jour" class="button-style">
+                                    <option>Tous</option>
+                                    <option value="Vendredi">Vendredi 26/07</option>
+                                    <option value="Samedi">Samedi 27/07</option>
+                                    <option value="Dimanche">Dimanche 28/07</option>
+                                </select>
+                            </div>
+
+                            <div class="filtreConteneur flex-column">
+                                <label for="heure">Horaire (à partir de)</label>
+                                <input type="time" name="heure" id="heure" value="14:00">
+                                </input>
+                            </div>
+                        </div>
+                        
+                        <div id="filtreAutre" class="d-flex flex-column justify-content-center align-items-center">
+                            <div class="filtreConteneur flex-column">
+                                <label for="lieu">Lieu</label>
+                                <select id="lieu" name="lieu" class="button-style">
+                                    <option>Tous</option>
+                                    <option value="Euphorie" id="Euphorie">Scène Euphorie</option>
+                                    <option value="Fusion" id="Fusion">Scène Fusion</option>
+                                    <option value="Reverie" id="Reverie">Scène Reverie</option>
+                                    <option value="Resonance" id="Resonance">Scène Resonance</option>
+                                    <option value="Prisme" id="Prisme">Scène Prisme</option>
+                                    <option value="Patio" id="Patio">Le Patio</option>
+                                </select>
+                            </div>
+                            <div class="filtreConteneur flex-column">
+                                <label for="type">Type d'évènement</label>
+                                <select id="type" name="type" class="button-style">
+                                    <option>Tous</option>
+                                    <option value="concert">Concert</option>
+                                    <option value="performance">Performance</option>
+                                    <option value="atelier">Atelier</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="filtreConteneur flex-column">
-                            <label for="heure">Horaires (à partir de)</label>
-                            <input type="time" name="heure" id="heure" value="14:00">
-                            </input>
-                        </div>
-
-                        <div class="filtreConteneur flex-column">
-                        <label for="lieu">Lieux</label>
-                            <select id="lieu" name="lieu" class="button-style">
-                                <option>Tous</option>
-                                <option value="Euphorie" id="Euphorie">Scene Euphorie</option>
-                                <option value="Fusion" id="Fusion">Scene Fusion</option>
-                                <option value="Reverie" id="Reverie">Scene Reverie</option>
-                                <option value="Resonance" id="Resonance">Scene Resonance</option>
-                                <option value="Prisme" id="Prisme">Scene Prisme</option>
-                                <option value="Patio" id="Patio">Le Patio</option>
-                            </select>
-                        </div>
+                        
                     </div>
-
-                    <div class="filtreConteneur flex-column">
-                    <label for="type">Type d'evenement</label>
-                        <select id="type" name="type" class="button-style">
-                            <option>Tous</option>
-                            <option value="concert">Concert</option>
-                            <option value="performance">Performance</option>
-                            <option value="atelier">Atelier</option>
-                        </select>
-                    </div>
+                        
 
                 </div>
             </div>

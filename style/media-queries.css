@@ -30,14 +30,14 @@
     #visuelMenu{
         display: flex;
         justify-content: center;
-        width: 100%;
+        width: 90%;
         padding: 10%;
     }
 
     #mascotteMenu {
-        width: 30%;
+        width: 25%;
         position: absolute;
-        margin: 0 0 200px 180px;
+        margin: 0 0 160px 110px;
         z-index: 2;
         animation: logoShake 15s ease-out 0s infinite normal forwards;
     }
@@ -280,6 +280,10 @@
         margin: 0;
     }
 
+    #filtreTemporel, #filtreAutre {
+        width: 100%;
+    }
+
     #filtreTitre>img{
         margin-left: 20px;
     }
@@ -310,12 +314,13 @@
 @media (max-width: 450px) {
 
     #menuInfo>ul{
-        padding: 10% 0 0 10%;
+        padding: 20% 0 0 10%;
+        width: 80%;
     }
 
     #menuInfo>ul>li {
         padding-top: 8%;
-        font-size: 30px;
+        font-size: 24px;
     }
 
     footer {

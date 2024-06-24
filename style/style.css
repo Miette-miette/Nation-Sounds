@@ -3,6 +3,7 @@
 body{
     background-color: #FFE3B0;
     overflow-x: hidden;
+    width: 100vw;
 }
 
 main{
@@ -138,8 +139,8 @@ button:hover, .button-style:hover{
 
 /* HEADER */
 
-header{
-    padding: 2%;
+header {
+    padding: 4%;
     position: fixed;
     width: 100%;
     z-index: 7;
@@ -156,6 +157,8 @@ header{
     z-index: 7;
     cursor: pointer;
     filter: drop-shadow(2px 4px 4px #492E34);
+    top: 2%;
+    right: 2%;
 }
 
 /*MENU*/
@@ -469,19 +472,46 @@ footer>div>div>p{
     color: beige;
 }
 
-.pass {
+#heure{
+    background-color: #E47161;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 8px;
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    color: beige;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.pass1, .pass2, .pass3 {
     background-image: url(../media/illustration/tartelette_accueil.png);
     background-position: center;
     background-size: contain;
-    background-repeat: no-repeat;
-    width: 300px;
-    height: 260px;
+    background-repeat: no-repeat; 
     justify-content: center;
     align-items: center;
     margin: 2% 2%;
     filter: drop-shadow(2px 4px 4px #3f2128);
 }
-.pass>h3{
+
+.pass3{
+    width: 300px;
+    height: 260px;
+}
+
+.pass2{
+    width: 250px;
+    height: 250px;
+}
+
+.pass2{
+    width: 200px;
+    height: 200px;
+}
+
+.pass1>h3, .pass2>h3, .pass3>h3{
     font-family: "Caprasimo", serif;
 }
 /*ACCUEIL ARTICLE ACTU*/
@@ -611,12 +641,12 @@ footer>div>div>p{
 
 .filtreConteneur {
     display: flex;
-    width: 150px;
+    width: 240px;
 }
 
 .progBtn{
     margin-top: 2%;
-    width: 800px;
+    width: 700px;
     background-color: beige;
     padding: 10px 15px 10px 15px;
     border-style: solid;
@@ -624,6 +654,10 @@ footer>div>div>p{
     border-radius: 15px;
     margin: 1%;
     filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
+}
+
+#filtreTemporel, #filtreAutre {
+    width: 50%;
 }
 
 .progItem{
