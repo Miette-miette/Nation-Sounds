@@ -5,7 +5,7 @@ let cms= new CMS();
 
 //RESSOURCES
 
-let hostArticle="https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=29";
+let hostArticle="https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=5";
 let hostConcert="https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=19&per_page=60";
 
 
