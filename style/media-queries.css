@@ -25,6 +25,7 @@
     #menuInfo{
         display: none;
         flex-direction: column-reverse;
+        width: 100%;
     }
 
     #visuelMenu{
@@ -203,9 +204,26 @@
     }
 
 
-    .pass {
-        width: 210px;
-        height: 220px;
+    .pass1, .pass2, .pass3 {
+        margin: 6% 5%;
+    }
+
+    .pass3{
+        width: 250px;
+        height: 250px;
+    }
+    
+    .pass3>h3 {
+        font-size: 25px;
+    }
+
+    .pass1,.pass2{
+        width: 200px;
+        height: 200px;
+    }
+
+    .pass1>h3, .pass2>h3{
+        font-size: 20px;
     }
 
     .infoCard {
@@ -220,6 +238,10 @@
         height: 210px;
         width: 250px;
         padding: 2%;
+    }
+
+    .articleImg>img {
+        width: 100%;
     }
 
     #asso {
@@ -274,6 +296,7 @@
         background-color: beige;
         width: 100%;
         padding: 4% 10% 10% 10%;
+        border: none;
         border-top: solid #492E34;
         z-index: 2;
         border-radius: 0;
@@ -306,6 +329,11 @@
         width: 100%;
         height: 500px;
     }
+
+    .btnInfoFooter>img{
+        margin-right: 0;
+        margin-bottom: 5%;
+    }
     
 
     
@@ -314,13 +342,13 @@
 @media (max-width: 450px) {
 
     #menuInfo>ul{
-        padding: 20% 0 0 10%;
-        width: 80%;
+        padding: 30% 0 0 10%;
+        width: 100%;
     }
 
     #menuInfo>ul>li {
         padding-top: 8%;
-        font-size: 24px;
+        font-size: 26px;
     }
 
     footer {

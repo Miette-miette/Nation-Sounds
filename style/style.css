@@ -99,6 +99,10 @@ a:hover{
     color: #E47161;
 }
 
+.title{
+    font-family: "Caprasimo", serif;
+}
+
 button, .button-style {
     background-color: #E47161;
     padding: 2%;
@@ -107,9 +111,11 @@ button, .button-style {
     font-family: "Afacad", sans-serif;
     font-optical-sizing: auto;
     color: beige;
+    border:#492E34 2px solid ;
     cursor: pointer;
     display: flex;
     justify-content: center;
+    filter: drop-shadow(2px 4px 4px #492E34);
 }
 
 button:hover, .button-style:hover{
@@ -140,7 +146,7 @@ button:hover, .button-style:hover{
 /* HEADER */
 
 header {
-    padding: 4%;
+    padding: 2%;
     position: fixed;
     width: 100%;
     z-index: 7;
@@ -157,8 +163,6 @@ header {
     z-index: 7;
     cursor: pointer;
     filter: drop-shadow(2px 4px 4px #492E34);
-    top: 2%;
-    right: 2%;
 }
 
 /*MENU*/
@@ -298,6 +302,7 @@ footer>div>div>p{
     width: 100%;
     padding-bottom: 20px;
     filter: drop-shadow(2px 4px 4px #492E34);
+    
 }
 
 #logoAnim{
@@ -465,27 +470,19 @@ footer>div>div>p{
 #billeterie {
     width: 100%;
     padding: 2% 0 4%;
-    background-color: #8f505e;
+    background-image: url(../media/pexels-wendywei-1805895.png); 
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #billeterie>div>h2 , #billeterie>p {
     color: beige;
 }
 
-#heure{
-    background-color: #E47161;
-    padding: 2%;
-    margin: 1%;
-    border-radius: 8px;
-    font-family: "Afacad", sans-serif;
-    font-optical-sizing: auto;
-    color: beige;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-}
-
 .pass1, .pass2, .pass3 {
+    position: relative;
+    z-index: 3;
     background-image: url(../media/illustration/tartelette_accueil.png);
     background-position: center;
     background-size: contain;
@@ -497,23 +494,36 @@ footer>div>div>p{
 }
 
 .pass3{
-    width: 300px;
-    height: 260px;
+    width: 350px;
+    height: 350px;
 }
 
-.pass2{
-    width: 250px;
-    height: 250px;
+.pass2,.pass1{
+    width: 270px;
+    height: 270px;
 }
 
-.pass2{
-    width: 200px;
-    height: 200px;
-}
-
-.pass1>h3, .pass2>h3, .pass3>h3{
+.pass3>h3{
     font-family: "Caprasimo", serif;
+    font-size: 30px;
 }
+.pass3>p{
+    font-size: 40px;
+    font-weight: bold;
+    color: #E47161;
+}
+
+.pass1>h3, .pass2>h3{
+    font-family: "Caprasimo", serif;
+    font-size: 24px;
+}
+
+.pass1>p, .pass2>p{
+    font-size: 30px;
+    color: #E47161;
+    font-weight: bold;
+}
+
 /*ACCUEIL ARTICLE ACTU*/
 
 #news {
@@ -548,15 +558,15 @@ footer>div>div>p{
     filter: drop-shadow(2px 4px 4px #492E34);
 }
 
-.articleImg{   
-    height: 300px;
+.articleImg{  
+    height: 250px; 
     display: flex;
     justify-content: center;
     
 }
 
 .articleImg>img{
-    width: 100%;
+    width: 300px;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -582,8 +592,8 @@ footer>div>div>p{
 
 #assoTxt>img{
     border-radius: 100%;
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     object-fit: cover;
     margin-right: 5% ;
 }
@@ -656,6 +666,19 @@ footer>div>div>p{
     filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 }
 
+#heure{
+    background-color: #E47161;
+    padding: 2%;
+    margin: 1%;
+    border-radius: 8px;
+    font-family: "Afacad", sans-serif;
+    font-optical-sizing: auto;
+    color: beige;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
 #filtreTemporel, #filtreAutre {
     width: 50%;
 }
@@ -695,6 +718,11 @@ footer>div>div>p{
     width: 100%;
     background: linear-gradient(0deg, rgba(0,0,0,0.6278886554621849) 49%, rgba(255,255,255,0) 100%);
     padding: 20px;
+}
+
+.date{
+    color: #E47161!important;
+    font-weight: bold;
 }
 
 /* FAQ */
@@ -782,6 +810,7 @@ footer>div>div>p{
 
 #map{ 
     height: 400px; 
+    width: 100%;
     position: relative;
     z-index: 1;
     border-style: solid;
@@ -789,15 +818,8 @@ footer>div>div>p{
     margin: 1%;
 }
 
-.leaflet-popup-content {
-    font-family: "Caprasimo", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: #3f292e;
-    
-}
-
-.carteFood{
+#conteneurInformations{
+    width: 100%;
     background-color: beige;
     padding: 10px 15px 10px 15px;
     border-style: solid;
@@ -805,6 +827,13 @@ footer>div>div>p{
     border-radius: 10px;
     margin: 1%;
     filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
+}
+
+.leaflet-popup-content {
+    font-family: "Caprasimo", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #3f292e; 
 }
 
 .carteInfoImg{
@@ -869,5 +898,19 @@ footer>div>div>p{
     width: 120px;
     right: 1px;
     top: -90px;
+}
+
+.btnInfoFooter{
+    padding: 4%;
+}
+
+.btnInfoFooter>img{
+    margin-right: 10%;
+}
+
+.btnInfoFooter>div>h3 {
+    font-family: "Caprasimo", serif;
+    color: beige;
+
 }
 
