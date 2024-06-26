@@ -137,11 +137,13 @@ button:hover, .button-style:hover{
 .decoTitre{
     width: 50px;
     margin: 20px;
+    overflow: hidden;
     animation: logoRotation  35s linear 0s infinite normal forwards;
 }
 .decoTitreShake{
     width: 50px;
     margin: 20px;
+    overflow: hidden;
     animation: logoShake 12s ease-out 0s infinite normal forwards;
 }
 
@@ -213,6 +215,7 @@ header {
     width: 10%;
     position: absolute;
     margin: 0 0 500px 200px;
+    overflow: hidden;
     z-index: 2;
     animation: logoShake 15s ease-out 0s infinite normal forwards;
 }
@@ -317,6 +320,7 @@ footer>div>div>p{
     width: 12%;
     top: 142px;
     left: 23%;
+    overflow: hidden;
     animation: logoShake 20s ease-out 0s infinite normal forwards;
 }
 
@@ -326,6 +330,7 @@ footer>div>div>p{
     width: 5%;
     top: 150px;
     right: 32%;
+    overflow: hidden;
 }
 
 #mega {
@@ -334,6 +339,7 @@ footer>div>div>p{
     width: 8%;
     left: 18%;
     top: 460px;
+    overflow: hidden;
     animation: logoShake 10s ease-out 0s infinite normal forwards;
 }
 
@@ -344,6 +350,7 @@ footer>div>div>p{
     top: 95px;
     right: 15%;
     rotate: -30deg;
+    overflow: hidden;
     animation: logoShake 10s ease-out 0s infinite normal forwards;
     
 }
@@ -354,6 +361,7 @@ footer>div>div>p{
     width: 5%;
     top: 580px;
     left: 28%;
+    overflow: hidden;
     animation: logoRotation 20s linear 0s infinite normal forwards;
 }
 
@@ -363,6 +371,7 @@ footer>div>div>p{
     width: 10%;
     top: 230px;
     right: 17%;
+    overflow: hidden;
     animation: logoRotation  25s linear 0s infinite normal forwards;
 }
 
@@ -372,6 +381,7 @@ footer>div>div>p{
     width: 7%;
     top: 600px;
     right: 25%;
+    overflow: hidden;
     animation: logoRotation  30s linear 0s infinite normal forwards;
 }
 
@@ -379,6 +389,7 @@ footer>div>div>p{
     position: absolute;
     z-index: 2;
     width: 35%;
+    overflow: hidden;
     animation: logoRotation  35s linear 0s infinite normal forwards;
 
 }
@@ -410,6 +421,7 @@ footer>div>div>p{
     width: 100px;
     margin-left: 60%;
     margin-top: 25%;
+    overflow: hidden;
     animation: logoShake 12s ease-out 0s infinite normal forwards;
 }
 
