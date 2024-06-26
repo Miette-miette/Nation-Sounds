@@ -436,7 +436,7 @@ footer>div>div>p{
 }
 
 #conteneurCarousel{ 
-    overflow-x:scroll;
+    overflow-x:hidden;
     scroll-behavior: smooth; 
 }
 
@@ -589,7 +589,7 @@ footer>div>div>p{
 }
 
 #articleConteneur{ 
-    overflow-x:scroll;
+    overflow-x:hidden;
     scroll-behavior: smooth; 
 }
 
