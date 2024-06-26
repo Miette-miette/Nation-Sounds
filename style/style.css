@@ -790,20 +790,20 @@ footer>div>div>p{
     
 }
 
-.imgPartenaireConteneur{
+.imgPartenaireConteneur {
     background-color: rgb(255, 255, 255);
-    height: 140px;
+    /* height: 200px; */
+    width: 100%;
     margin: 1%;
     border-style: solid;
-    border-color:#492E34;
+    border-color: #492E34;
     border-radius: 8px;
 }
 
-.imgPartenaireConteneur>img{
+.imgPartenaireConteneur>img {
     width: 200px;
     height: fit-content;
-    padding: 8%;
-    
+    margin: 5%;
 }
 
 /*CARTE*/
