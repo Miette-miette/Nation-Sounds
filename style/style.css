@@ -126,6 +126,8 @@ button:hover, .button-style:hover{
     background-color:#8f505e;
 }
 
+
+
 .voirPlus{
     width: 15px;
     height: 25px;
@@ -148,7 +150,7 @@ button:hover, .button-style:hover{
 header {
     padding: 2%;
     position: fixed;
-    width: 100%;
+    width:100%;
     z-index: 7;
 }
 
@@ -160,7 +162,6 @@ header {
 
 #menuBtn{
     position: relative;
-    z-index: 7;
     cursor: pointer;
     filter: drop-shadow(2px 4px 4px #492E34);
 }
@@ -179,7 +180,7 @@ header {
 
 #menuInfo {
     display: none;
-    justify-content: center;
+    justify-content: start;
     position: fixed;
     background-color: #492E34;
     color: beige;
@@ -666,6 +667,13 @@ footer>div>div>p{
     filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
 }
 
+
+
+.iconScene {
+    width: 60px;
+    margin: 3%;
+}
+
 #heure{
     background-color: #E47161;
     padding: 2%;
@@ -850,10 +858,36 @@ footer>div>div>p{
     padding: 5%;
 }
 
-.carteTxt{
+.carteConcertTxt>h2, .carteConcertTxt>p{
+    color: beige;
+}
+
+.bgRound {
+    position: absolute;
+    z-index: 1;
+    width: 320px;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
+    animation: logoRotation  35s linear 0s infinite normal forwards;   
+}
+
+.imgRound{
+    position: relative;
+    z-index: 2;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 8%;
+}
+
+.carteTxt, .carteConcertTxt{
     padding: 3%;
 }
 
+.conteneurImg{
+    height: 100%; 
+}
 /*INFORMATION*/
 
 #retour {

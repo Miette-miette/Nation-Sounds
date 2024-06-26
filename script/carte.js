@@ -128,23 +128,27 @@ newListMarker();
 function infoLieu(id){
 
     for(let t=0;t<infoCarte.length;t++){
-        let todayData= new Date();
+        let todayDate= new Date();
         if(infoCarte[t].type==id){ //AFFICHAGE DES INFOS SUR LES LIEUX
             let infoItem=cms.replaceTemplate(infoCarte[t],infoFoodTemplate);
             document.getElementById('conteneurInformations').innerHTML=infoItem;
+            document.getElementById('conteneurInformations').style.backgroundColor="beige";
         } 
 
         if(infoCarte[t].type=="concert"||infoCarte[t].type=="atelier"||infoCarte[t].type=="performance"){ //AFFICHAGE DES SPECTACLES EN TEMPS REEL PAR SCENE
             if(infoCarte[t].scene.toLowerCase()==id){
-                console.log(infoCarte[t].dateF);
-                console.log(todayData);
-                if(infoCarte[t].dateF>=todayData){
-                    
+                let infoDate=new Date(infoCarte[t].dateF);
+                console.log(todayDate);
+
+                if(infoDate<=todayDate){
                     let infoItem=cms.replaceTemplate(infoCarte[t],infoConcertTemplate);
                     document.getElementById('conteneurInformations').innerHTML=infoItem;
+                    document.getElementById('conteneurInformations').style.backgroundColor="#8f505e";
+                    break;
                 }
-                if(infoCarte[t].dateF!=todayData){
+                if(infoCarte[t].dateF!=todayDate){
                     document.getElementById('conteneurInformations').innerHTML=aucunConcertTemplate;
+                    document.getElementById('conteneurInformations').style.backgroundColor="beige";
                 } 
             }
         }               

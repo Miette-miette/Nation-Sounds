@@ -24,6 +24,16 @@ let progFiltre={//DONNEES DES FILTRES
     "type":"tous",  
 }
 
+let iconeScene={
+    "Euphorie":"./media/euphorie.png",
+    "Fusion":"./media/fusion.png",
+    "Reverie":"./media/reverie.png",
+    "Patio":"./media/le patio.png",
+    "Prisme":"./media/prisme.png",
+    "Resonance":"./media/resonance.png",
+
+}
+
 //Fonction AFFICHAGE
 
 function affichageItem(tab){  
@@ -53,6 +63,18 @@ function storageData(){
 let all=[];
 
 for (let a=0;a<dataArticle.length;a++){
+        let sceneName=Object.keys(iconeScene);
+        let sceneImg=Object.values(iconeScene);
+        console.log(sceneName);
+        for(let s=0;s<sceneName.length;s++){
+            if(dataArticle[a].scene==sceneName[s]){
+            dataArticle[a]["iconScene"]=sceneImg[s];
+            console.log(dataArticle[a]);
+        }
+        
+        
+    }
+    
     all.push(dataArticle[a]);   
 }
 affichageItem(all);
