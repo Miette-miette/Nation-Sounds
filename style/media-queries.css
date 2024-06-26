@@ -13,8 +13,10 @@
 
     /*MENU*/
 
-    #menuInfo>ul{
-        padding: 30% 0 0 10%;
+    #menuInfo>ul {
+        padding-top: 10%;
+        padding-left: 10%;
+        width: 100%;
     }
 
     #menuInfo>ul>li {
@@ -105,6 +107,7 @@
     }
 
     #bienvenue {
+        background-image: url(../media/pexels-milodeckertM.png);
         height: 600px;
         width: 100%;
     }
@@ -334,6 +337,15 @@
         margin-right: 0;
         margin-bottom: 5%;
     }
+
+    #map {
+        width: 100%;
+        height: 400px;
+    }
+
+    #conteneurInformations {
+        width: 100%;
+    }
     
 
     
@@ -350,14 +362,13 @@
         margin: 0 0 100px 70px;
     }
 
-    #menuInfo>ul{
-        padding: 30% 0 0 10%;
-        width: 100%;
-    }
-
     #menuInfo>ul>li {
         padding-top: 8%;
         font-size: 26px;
+    }
+
+    #menuInfo>ul{
+        padding-top: 30%;
     }
 
     footer {

@@ -56,6 +56,35 @@ main{
 		transform: rotate(8deg);
 	}
 }
+
+@keyframes beats {
+	0% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+		transform-origin: center center;
+	}
+
+	20% {
+		animation-timing-function: ease-in;
+		transform: scale(0.97);
+	}
+
+	30% {
+		animation-timing-function: ease-out;
+		transform: scale(0.99);
+	}
+
+	43% {
+		animation-timing-function: ease-in;
+		transform: scale(0.97);
+	}
+
+	70% {
+		animation-timing-function: ease-out;
+		transform: scale(1);
+	}
+}
+
 /*STYLE DE BASE ET TEXTES */
 
 h1{
@@ -182,7 +211,7 @@ header {
 
 #menuInfo {
     display: none;
-    justify-content: start;
+    justify-content: center;
     position: fixed;
     background-color: #492E34;
     color: beige;
@@ -198,11 +227,21 @@ header {
     padding-top: 8%;
 }
 
+.bi-box-arrow-up-right{
+    width: 30px;
+    height: 30px;
+    margin: 0 0 10px 20px;
+}
+
 #menuInfo>ul>li {
     font-family: "Afacad", sans-serif;
     color: beige;
     font-size: 50px;
     list-style: none;
+}
+
+#menuInfo>ul>li>img {
+    width: 50px;
 }
 
 /* MENU VISUEL */
@@ -301,7 +340,7 @@ footer>div>div>p{
     height: 900px;
     margin-top: -100px;
     padding-top: 200px;
-    background-image: url(../media/pexels-milodeckert-17842579.png);
+    background-image: url(../media/pexels-milodeckertxXL.png);
     background-size: cover;
     background-position: right;
     width: 100%;
@@ -399,6 +438,7 @@ footer>div>div>p{
     position: absolute;
     z-index: 3;
     width: 28%;
+    animation: beats 0.6s ease-out 0s infinite normal forwards;
 
 }
 
@@ -687,6 +727,7 @@ footer>div>div>p{
 .iconScene {
     width: 60px;
     margin: 3%;
+    animation: beats 0.6s ease-out 0s infinite normal forwards;
 }
 
 #heure{
@@ -799,7 +840,7 @@ footer>div>div>p{
 
 /*PARTENAIRE*/
 
-#institutionConteneur, #entrepriseConteneur{
+.conteneurPartenaire{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -809,8 +850,12 @@ footer>div>div>p{
     padding: 2%;
     margin: 1%;
     border-radius: 8px;
-    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
-    
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));   
+}
+
+.conteneurPartenaire>h2{
+    color: beige;
+    font-size: 30px;
 }
 
 .imgPartenaireConteneur {
@@ -829,11 +874,17 @@ footer>div>div>p{
     margin: 5%;
 }
 
+.imgPartenaireConteneur>div>h2{
+    display: flex;
+    justify-content: flex-start;
+}
+
 /*CARTE*/
 
-#map{ 
-    height: 400px; 
-    width: 100%;
+#map {
+
+    min-height: 400px;
+    width: 60%;
     position: relative;
     z-index: 1;
     border-style: solid;
@@ -842,7 +893,7 @@ footer>div>div>p{
 }
 
 #conteneurInformations{
-    width: 100%;
+    width: 40%;
     background-color: beige;
     padding: 10px 15px 10px 15px;
     border-style: solid;
@@ -865,8 +916,8 @@ footer>div>div>p{
 }
 
 .carteInfoImg>img {
-    width: 300px;
-    height: 300px;
+    width: 220px;
+    height: 220px;
     border-radius: 100%;
     object-fit: cover;
     object-position: center;
@@ -880,7 +931,7 @@ footer>div>div>p{
 .bgRound {
     position: absolute;
     z-index: 1;
-    width: 320px;
+    width: 230px;
     filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
     animation: logoRotation  35s linear 0s infinite normal forwards;   
 }
@@ -888,12 +939,13 @@ footer>div>div>p{
 .imgRound{
     position: relative;
     z-index: 2;
-    width: 300px;
-    height: 300px;
+    width: 210px;
+    height: 210px;
     border-radius: 100%;
     object-fit: cover;
     object-position: center;
     padding: 8%;
+    animation: beats 0.6s ease-out 0s infinite normal forwards;
 }
 
 .carteTxt, .carteConcertTxt{
@@ -902,6 +954,23 @@ footer>div>div>p{
 
 .conteneurImg{
     height: 100%; 
+}
+
+#legend{
+    width: 100%;
+    background-color: beige;
+    padding: 20px;
+    border-style: solid;
+    border-color: #492E34;
+    border-radius: 10px;
+    margin: 1%;
+    filter: drop-shadow(2px 2px 2px rgb(136, 108, 72));
+}
+    
+
+.legendItem>img{
+    width: 40px;
+    margin: 2%;
 }
 /*INFORMATION*/
 
