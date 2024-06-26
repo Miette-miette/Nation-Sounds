@@ -294,6 +294,7 @@ footer>div>div>p{
 
 #mainAccueil{
     padding: 5% 0;
+    overflow-x: hidden;
 }
 
 #bienvenue {
