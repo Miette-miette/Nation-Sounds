@@ -5,8 +5,8 @@ let cms= new CMS();
 
 //RESSOURCES
 
-let hostArticle="https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=5";
-let hostConcert="https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=19&per_page=60";
+const hostArticle="https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=5";
+const hostConcert="https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=19&per_page=60";
 
 
 
@@ -25,9 +25,9 @@ console.log(dataArticle);
 
 //TEMPLATES
 
-let artisteTemplate= await fetchRessource("/templates/carouselCard.html"); //Template du carousel artiste
+const artisteTemplate= await fetchRessource("/templates/carouselCard.html"); //Template du carousel artiste
 
-let articleTemplate= await fetchRessource("/templates/articleCard.html"); 
+const articleTemplate= await fetchRessource("/templates/articleCard.html"); 
 
 //AFFICHAGE
 

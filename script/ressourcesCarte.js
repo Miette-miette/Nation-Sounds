@@ -67,14 +67,4 @@ export default function ressourceCarte(){
             return markerObj;       
         
     }
-
-    //affichage des marqueurs (trouver comment reset l'affichage removemap?)
-
-    this.affichageMarker=function(tab,map){
-
-        for (let t=0;t<tab.length;t++){
-          let markerSelected = L.marker([tab[t].latitude,tab[t].longitude],{icon: tab[t].img}).addTo(map).bindPopup(tab[t].bulle);  
-          console.log(markerSelected);
-        }
-    }
 }

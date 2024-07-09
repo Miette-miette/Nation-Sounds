@@ -1,10 +1,10 @@
-let question= document.getElementsByClassName("question");
+const question= document.getElementsByClassName("question");
 console.log(question);
 
-let reponse=document.getElementsByClassName("reponse");
+const reponse=document.getElementsByClassName("reponse");
 console.log(reponse);
 
-let imgFleche=document.getElementsByClassName('voirPlus');
+const imgFleche=document.getElementsByClassName('voirPlus');
 console.log(imgFleche);
 
 function showQuestion(){

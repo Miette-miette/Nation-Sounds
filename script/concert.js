@@ -8,15 +8,15 @@ let filtre= new filtreProgramme;
 
 //CATEGORIE CONCERT ID=19
 
-let articleCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=19&per_page=60");// Articles Categorie Concert de Nation Sounds WP 
+const articleCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=19&per_page=60");// Articles Categorie Concert de Nation Sounds WP 
 console.log(articleCMS);
 
 let dataArticle= cms.formateur(articleCMS);
 console.log(dataArticle); //données formatées
 
-let concertTemplate= await fetchRessource("./templates/concertTemplate.html"); //Template de la page concert
+const concertTemplate= await fetchRessource("./templates/concertTemplate.html"); //Template de la page concert
 
-let tabScenes=["Euphorie","Fusion","Reverie","Resonance","Prisme"];
+const tabScenes=["Euphorie","Fusion","Reverie","Resonance","Prisme"];
 
 //Objet jour avec ID 
 

@@ -6,15 +6,15 @@ let cms= new CMS();
 
 let filtre= new filtreProgramme;
 
-//CATEGORIE PROGRAMATION ID=18
+//CATEGORIE PROGRAMATION ID=14
 
-let articleCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=14&per_page=60");// Articles programmation de Nation Sounds WP 
+const articleCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=14&per_page=60");// Articles programmation de Nation Sounds WP 
 console.log(articleCMS);
 
-let dataArticle= cms.formateur(articleCMS);//données formatées
+const dataArticle= cms.formateur(articleCMS);//données formatées
 console.log(dataArticle); 
 
-let progTemplate= await fetchRessource("./templates/programmeTemplate.html"); //Template de la page programme
+const progTemplate= await fetchRessource("./templates/programmeTemplate.html"); //Template de la page programme
 
 let progFiltre={//DONNEES DES FILTRES
     
@@ -24,14 +24,13 @@ let progFiltre={//DONNEES DES FILTRES
     "type":"tous",  
 }
 
-let iconeScene={
+let iconeScene={//ICONES DES SCENES
     "Euphorie":"./media/euphorie.png",
     "Fusion":"./media/fusion.png",
     "Reverie":"./media/reverie.png",
     "Patio":"./media/le patio.png",
     "Prisme":"./media/prisme.png",
     "Resonance":"./media/resonance.png",
-
 }
 
 //Fonction AFFICHAGE
@@ -49,10 +48,9 @@ function affichageItem(tab){
 function storageData(){
     let progItem=document.getElementsByClassName("progItem");
 
-    for (let p=0;p<progItem.length;p++){
-        console.log(progItem[p].id);
-        progItem[p].addEventListener('click',()=>{
-            localStorage.setItem('progItem', JSON.stringify(cms.progItemFromTitle(dataArticle,progItem[p].id)))
+    for (let i=0;i<progItem.length;i++){
+        progItem[i].addEventListener('click',()=>{
+            localStorage.setItem('progItem', JSON.stringify(cms.progItemFromTitle(dataArticle,progItem[i].id)))
             window.open('./information.html','_self');
         })
     }
@@ -62,20 +60,17 @@ function storageData(){
 
 let all=[];
 
-for (let a=0;a<dataArticle.length;a++){
+for (let i=0;i<dataArticle.length;i++){
         let sceneName=Object.keys(iconeScene);
         let sceneImg=Object.values(iconeScene);
-        console.log(sceneName);
-        for(let s=0;s<sceneName.length;s++){
-            if(dataArticle[a].scene==sceneName[s]){
-            dataArticle[a]["iconScene"]=sceneImg[s];
-            console.log(dataArticle[a]);
-        }
-        
-        
+
+        for(let j=0;j<sceneName.length;j++){
+            if(dataArticle[i].scene==sceneName[j]){
+            dataArticle[i]["iconScene"]=sceneImg[j];
+        }   
     }
     
-    all.push(dataArticle[a]);   
+    all.push(dataArticle[i]);   
 }
 affichageItem(all);
 cms.pageInformation("progItem",dataArticle);
@@ -125,34 +120,32 @@ function setup(){
     
     //Recuperation des select
     let onchangeSelect= document.getElementsByTagName('select');
-    for (let s=0;s<onchangeSelect.length;s++){
-      onchangeSelect[s].addEventListener('change',filtreChange);
+    for (let i=0;i<onchangeSelect.length;i++){
+      onchangeSelect[i].addEventListener('change',filtreChange);
     } 
   }
 
 setup();
 
+//SLIDER FILTRE POUR LA VERSION MOBILE ET TABLETTE
 
 function showFiltre(){
 
-    let progFiltreConteneur=document.getElementById('filtreTitre');
-    console.log(progFiltreConteneur);
+    const progFiltreConteneur=document.getElementById('filtreTitre');
 
-    let filtre=document.getElementsByClassName('filtreConteneur');
-    console.log(filtre);
+    const filtre=document.getElementsByClassName('filtreConteneur');
 
-    let imgFleche=document.getElementsByClassName('voirPlus');
-    console.log(imgFleche);
+    const imgFleche=document.getElementsByClassName('voirPlus');
 
     progFiltreConteneur.addEventListener('click', ()=>{
-        for(let f=0;f<filtre.length;f++){
+        for(let i=0;i<filtre.length;i++){
        
-            if(filtre[f].style.display==="flex"){
-                filtre[f].style.display="none";
+            if(filtre[i].style.display==="flex"){
+                filtre[i].style.display="none";
                 imgFleche[0].style.rotate="82deg";
             }
             else{
-                filtre[f].style.display="flex";
+                filtre[i].style.display="flex";
                 imgFleche[0].style.rotate="265deg";
             } 
         }  

@@ -1,8 +1,8 @@
-let menuBtn= document.getElementById("menuBtn");
+const menuBtn= document.getElementById("menuBtn");
 
-let menuCollapse=document.getElementById("menuInfo");
+const menuCollapse=document.getElementById("menuInfo");
 
-let menuImg=document.getElementById("iconMenu");
+const menuImg=document.getElementById("iconMenu");
 
 
 function showMenu(){

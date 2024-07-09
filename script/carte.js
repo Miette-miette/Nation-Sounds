@@ -8,7 +8,7 @@ let ressource= new ressourceCarte();
 
 //CATEGORIE CARTE ID=6
 
-let carteCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=6");// Carte de Nation Sounds WP 
+const carteCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=6");// Carte de Nation Sounds WP 
 console.log(carteCMS);
 
 let infoCarte= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=10+14&per_page=80");//Informations des lieux et des scènes
@@ -17,11 +17,11 @@ console.log(infoCarte);
 
 // TEMPLATES
 
-let infoConcertTemplate= await fetchRessource("./templates/carteConcertTemplate.html");//Affichage des evenements
+const infoConcertTemplate= await fetchRessource("./templates/carteConcertTemplate.html");//Affichage des evenements
 
-let infoFoodTemplate= await fetchRessource("./templates/carteFoodTemplate.html");//Affichage des restaurants
+const infoFoodTemplate= await fetchRessource("./templates/carteFoodTemplate.html");//Affichage des restaurants
 
-let aucunConcertTemplate= await fetchRessource("./templates/aucunEvent.html");//Affichage si event=null
+const aucunConcertTemplate= await fetchRessource("./templates/aucunEvent.html");//Affichage si event=null
 
 // DONNEES FORMATEES
 
@@ -42,22 +42,20 @@ let wc=[];
 function formatageMarker(){
     for(let d=0;d<dataMarker.length;d++){
         let markerObj=ressource.markerFormatage(dataMarker[d]);
-        let markerAll = L.marker([markerObj.latitude,markerObj.longitude],{icon: markerObj.img}).bindPopup(markerObj.bulle);
-        all.push(markerAll);  
+        let marker = L.marker([markerObj.latitude,markerObj.longitude],{icon: markerObj.img}).bindPopup(markerObj.bulle);
+        switch(markerObj.class){
+            case "scene":
+                scene.push(marker);
+
+            case "food":
+                food.push(marker);
+
+            case "wc":
+                wc.push(marker);
+        }
+        all.push(marker);  
         console.log(markerObj);
 
-        if(markerObj.class=="scene"){
-            let markerScene = L.marker([markerObj.latitude,markerObj.longitude],{icon: markerObj.img}).bindPopup(markerObj.bulle);
-            scene.push(markerScene);  
-        }
-        if(markerObj.class=="food"){
-            let markerFood = L.marker([markerObj.latitude,markerObj.longitude],{icon: markerObj.img}).bindPopup(markerObj.bulle);
-            food.push(markerFood);
-        }
-        if(markerObj.class=="wc"){
-            let markerWc = L.marker([markerObj.latitude,markerObj.longitude],{icon: markerObj.img}).bindPopup(markerObj.bulle);
-            wc.push(markerWc);
-        }
     }
 }
 formatageMarker();
@@ -99,7 +97,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 allLayer.addTo(map);
 
-let layerControl=L.control.layers(markerFiltre).addTo(map);
+L.control.layers(markerFiltre).addTo(map);
 
 //RECUPERATION DES INFORMATIONS SUPPLEMENTAIRES
 
@@ -109,6 +107,18 @@ let listMarkerMap= document.getElementsByClassName('leaflet-marker-icon');
 console.log(listMarkerMap);
 
 function newListMarker(){
+    /*listMarkerMap.forEach((marker)=>{
+        let nameId=marker.src.match(markerIdRegex);
+        console.log(nameId);
+        nameId=nameId[0].split('/');
+        nameId=nameId[1].split('.')[0];
+        marker.id=nameId;
+
+        marker.addEventListener('click',()=>{
+            infoLieu(marker.id);
+        })
+    })*/
+
     for(let l=0;l<listMarkerMap.length;l++){
         let nameId=listMarkerMap[l].src.match(markerIdRegex);
         console.log(nameId);
@@ -127,12 +137,14 @@ newListMarker();
 
 function infoLieu(id){
 
+    const conteneurInfo=document.getElementById('conteneurInformations');
+
     for(let t=0;t<infoCarte.length;t++){
         let todayDate= new Date();
         if(infoCarte[t].type==id){ //AFFICHAGE DES INFOS SUR LES LIEUX
             let infoItem=cms.replaceTemplate(infoCarte[t],infoFoodTemplate);
-            document.getElementById('conteneurInformations').innerHTML=infoItem;
-            document.getElementById('conteneurInformations').style.backgroundColor="beige";
+            conteneurInfo.innerHTML=infoItem;
+            conteneurInfo.style.backgroundColor="beige";
         } 
 
         if(infoCarte[t].type=="concert"||infoCarte[t].type=="atelier"||infoCarte[t].type=="performance"){ //AFFICHAGE DES SPECTACLES EN TEMPS REEL PAR SCENE
@@ -142,13 +154,13 @@ function infoLieu(id){
 
                 if(infoDate<=todayDate){
                     let infoItem=cms.replaceTemplate(infoCarte[t],infoConcertTemplate);
-                    document.getElementById('conteneurInformations').innerHTML=infoItem;
-                    document.getElementById('conteneurInformations').style.backgroundColor="#8f505e";
+                    conteneurInfo.innerHTML=infoItem;
+                    conteneurInfo.style.backgroundColor="#8f505e";
                     break;
                 }
-                if(infoCarte[t].dateF!=todayDate){
-                    document.getElementById('conteneurInformations').innerHTML=aucunConcertTemplate;
-                    document.getElementById('conteneurInformations').style.backgroundColor="beige";
+                else{
+                    conteneurInfo.innerHTML=aucunConcertTemplate;
+                    conteneurInfo.style.backgroundColor="beige";
                 } 
             }
         }               
@@ -157,12 +169,21 @@ function infoLieu(id){
 
 //ADD EVENT LISTENER POUR LE CHANGEMENT DE LAYER
 
-let btnRadio=document.getElementsByClassName('leaflet-control-layers-selector');
+const btnRadio=document.getElementsByClassName('leaflet-control-layers-selector');
 
-for(let r=0;r<btnRadio.length;r++){
-    btnRadio[r].addEventListener('click',()=>{
+for(let i=0;i<btnRadio.length;i++){
+    btnRadio[i].addEventListener('click',()=>{
         newListMarker();
     })
 }
 
- 
+
+/*
+btnRadio.forEach(function(btn){
+    btn.addEventListener('click',()=>{
+        newListMarker();
+    })
+})
+
+    
+}*/

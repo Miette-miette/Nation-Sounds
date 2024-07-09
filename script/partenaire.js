@@ -1,22 +1,19 @@
 import CMS from './CMS.js';
-import filtreProgramme from './filtreProgramme.js';
 import fetchRessource from './fetchRessource.js';
 
 let cms= new CMS(); 
 
-let filtre= new filtreProgramme;
+//CATEGORIE PARTENAIRE ID=12
 
-//CATEGORIE PARTENAIRE ID=27
-
-let articleCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=12&per_page=60");// Articles partenaires de Nation Sounds WP 
+const articleCMS= await cms.dataCMS("https://nation-soundswp-am41helgut.live-website.com/wp-json/wp/v2/posts?categories=12&per_page=60");// Articles partenaires de Nation Sounds WP 
 console.log(articleCMS);
-
-let dataPartenaire= cms.formateur(articleCMS);//données formatées
+const dataPartenaire= cms.formateur(articleCMS);//données formatées
 console.log(dataPartenaire); 
 
-let partenaireTemplate= await fetchRessource("./templates/partenaireTemplate.html"); //Template de la page programme
+const partenaireTemplate= await fetchRessource("./templates/partenaireTemplate.html"); //Template de la page programme
 
-function affichageItem(tab,conteneur){    
+function affichageItem(tab,conteneur){ 
+       
     for(let i=0;i<tab.length;i++){
         tab[i]= cms.replaceTemplate(tab[i],partenaireTemplate); 
     }
@@ -26,17 +23,14 @@ function affichageItem(tab,conteneur){
 let institution=[];
 let entreprise=[];
 
-for(let t=0;t<dataPartenaire.length;t++){
-    if(dataPartenaire[t].type=="institution"){
-        institution.push(dataPartenaire[t]);
+for(let i=0;i<dataPartenaire.length;i++){
+    if(dataPartenaire[i].type=="institution"){
+        institution.push(dataPartenaire[i]);
     }
-    if(dataPartenaire[t].type=="entreprise"){
-        entreprise.push(dataPartenaire[t]);
+    if(dataPartenaire[i].type=="entreprise"){
+        entreprise.push(dataPartenaire[i]);
     }
 }
 
 affichageItem(institution,"institutionConteneur");
 affichageItem(entreprise,"entrepriseConteneur");
-
-console.log(institution);
-console.log(entreprise);
